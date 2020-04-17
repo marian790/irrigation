@@ -1,0 +1,18 @@
+﻿cards:
+  - entity: sensor.4chpro2_u1_r1_si7021_temperature
+    graph: line
+    hours_to_show: 240
+    name: teplota vzduchu
+    type: sensor
+  - entity: sensor.4chpro2_u1_r1_si7021_humidity
+    graph: line
+    hours_to_show: 240
+    name: vlhkost vzduchu
+    type: sensor
+  - entity: sensor.4chpro2_u1_r1_si7021_dewpoint
+    graph: line
+    hours_to_show: 240
+    name: rosny bod
+    type: sensor
+title: dolna zahrada
+type: vertical-stack

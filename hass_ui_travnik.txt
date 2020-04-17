@@ -1,0 +1,28 @@
+﻿entities:
+  - entity: switch.4chpro2_u3_r1
+    icon: 'mdi:water-pump'
+    name: travnik
+  - type: divider
+  - entity: input_boolean.travnik_pondelok
+  - entity: input_boolean.travnik_utorok
+  - entity: input_boolean.travnik_streda
+  - entity: input_boolean.travnik_stvrtok
+  - entity: input_boolean.travnik_piatok
+  - entity: input_boolean.travnik_sobota
+  - entity: input_boolean.travnik_nedela
+  - type: divider
+  - entity: input_boolean.travnik_zapnut_zalievanie_1
+  - entity: input_datetime.travnik_zalievanie_1
+  - entity: input_number.travnik_dlzka_zalievania_1
+  - type: divider
+  - entity: input_boolean.travnik_zapnut_zalievanie_2
+  - entity: input_boolean.povolit_teplotu_spustenia_zalievania_2
+    name: 2. zalievanie na zaklade teploty
+  - entity: input_datetime.travnik_zalievanie_2
+  - entity: input_number.travnik_dlzka_zalievania_2
+  - type: divider
+  - entity: input_boolean.travnik_nudzove_zalievanie
+  - entity: input_number.travnik_nudzove_zalievanie
+show_header_toggle: false
+title: travnik
+type: entities

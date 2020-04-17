@@ -1,0 +1,24 @@
+﻿- id: '1586718561234'
+  name: zavlaha ventily nudzove vypnutie
+  entities:
+    switch.4chpro2_u1_r2:
+      friendly_name: 4chpro2_u1_r2
+      state: 'off'
+    switch.4chpro2_u1_r3:
+      friendly_name: 4chpro2_u1_r3
+      state: 'off'
+    switch.4chpro2_u1_r4:
+      friendly_name: 4chpro2_u1_r4
+      state: 'off'
+    switch.4chpro2_u2_r1:
+      friendly_name: 4chpro2_u2_r1
+      state: 'off'
+    switch.4chpro2_u2_r2:
+      friendly_name: 4chpro2_u2_r2
+      state: 'off'
+    switch.4chpro2_u3_r1:
+      friendly_name: 4chpro2_u3_r1
+      state: 'off'
+    switch.zahrada_4chpro2_u1_r1:
+      friendly_name: zahrada 4chpro2_u1_r1
+      state: 'off'

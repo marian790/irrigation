@@ -1,0 +1,306 @@
+﻿#
+#zalievanie
+#
+#nastavenie casov zalievania
+input_datetime:
+  stromy_zalievanie_1:
+    name: 1. zalievanie
+    has_date: false
+    has_time: true
+    icon: 'mdi:alarm'
+  stromy_zalievanie_2:
+    name: 2. zalievanie
+    has_date: false
+    has_time: true
+    icon: 'mdi:alarm'
+  zahony_zalievanie_1:
+    name: 1. zalievanie
+    has_date: false
+    has_time: true
+    icon: 'mdi:alarm'
+  zahony_zalievanie_2:
+    name: 2. zalievanie
+    has_date: false
+    has_time: true
+    icon: 'mdi:alarm'
+  kvety_zalievanie_1:
+    name: 1. zalievanie
+    has_date: false
+    has_time: true
+    icon: 'mdi:alarm'
+  kvety_zalievanie_2:
+    name: 2. zalievanie
+    has_date: false
+    has_time: true
+    icon: 'mdi:alarm'
+  travnik_zalievanie_1:
+    name: 1. zalievanie
+    has_date: false
+    has_time: true
+    icon: 'mdi:alarm'
+  travnik_zalievanie_2:
+    name: 2. zalievanie
+    has_date: false
+    has_time: true
+    icon: 'mdi:alarm'
+#nastavenie dlzky zalievania
+input_number:
+  stromy_dlzka_zalievania_1:
+    name: dlzka 1. zalievania
+    min: 5
+    max: 60
+    step: 5
+    unit_of_measurement: min
+    icon: 'mdi:timer'
+  stromy_dlzka_zalievania_2:
+    name: dlzka 2. zalievania
+    min: 5
+    max: 60
+    step: 5
+    unit_of_measurement: min
+    icon: 'mdi:timer'
+  stromy_nudzove_zalievanie:
+    name: dlzka nudzoveho zalievania
+    min: 5
+    max: 60
+    step: 5
+    unit_of_measurement: min
+    icon: 'mdi:timer'
+  zahony_dlzka_zalievania_1:
+    name: dlzka 1. zalievania
+    min: 5
+    max: 60
+    step: 5
+    unit_of_measurement: min
+    icon: 'mdi:timer'
+  zahony_dlzka_zalievania_2:
+    name: dlzka 2. zalievania
+    min: 5
+    max: 60
+    step: 5
+    unit_of_measurement: min
+    icon: 'mdi:timer'
+  zahony_nudzove_zalievanie:
+    name: dlzka nudzoveho zalievania
+    min: 5
+    max: 60
+    step: 5
+    unit_of_measurement: min
+    icon: 'mdi:timer'
+  kvety_dlzka_zalievania_1:
+    name: dlzka 1. zalievania
+    min: 5
+    max: 60
+    step: 5
+    unit_of_measurement: min
+    icon: 'mdi:timer'
+  kvety_dlzka_zalievania_2:
+    name: dlzka 2. zalievania
+    min: 5
+    max: 60
+    step: 5
+    unit_of_measurement: min
+    icon: 'mdi:timer'
+  kvety_nudzove_zalievanie:
+    name: dlzka nudzoveho zalievania
+    min: 5
+    max: 60
+    step: 5
+    unit_of_measurement: min
+    icon: 'mdi:timer'
+  travnik_dlzka_zalievania_1:
+    name: dlzka 1. zalievania
+    min: 5
+    max: 30
+    step: 1
+    unit_of_measurement: min
+    icon: 'mdi:timer'
+  travnik_dlzka_zalievania_2:
+    name: dlzka 2. zalievania
+    min: 5
+    max: 30
+    step: 1
+    unit_of_measurement: min
+    icon: 'mdi:timer'
+  travnik_nudzove_zalievanie:
+    name: dlzka nudzoveho zalievania
+    min: 5
+    max: 30
+    step: 1
+    unit_of_measurement: min
+    icon: 'mdi:timer'
+#nastavenie globalnych parametrov zalievania	
+  teplota_stop_zalievania:
+    name: stop zalievania pri teplote
+    min: 1
+    max: 15
+    step: 1
+    unit_of_measurement: '°'
+    mode: box
+    icon: 'mdi:thermometer-minus'
+  teplota_spustenia_zalievania_2:
+    name: teplota pre spustenie 2. zalievania
+    min: 20
+    max: 60
+    step: 1
+    unit_of_measurement: '°'
+    mode: box
+    icon: 'mdi:thermometer-plus'
+  teplota_predlzenia_casov:
+    name: teplota predlzenia casov
+    min: 20
+    max: 60
+    step: 1
+    unit_of_measurement: '°'
+    mode: box
+    icon: 'mdi:thermometer-plus'
+  predlzenie_casov:
+    name: predlzenie casov
+    min: 5
+    max: 100
+    step: 1
+    unit_of_measurement: '%'
+    mode: box
+    icon: 'mdi:speedometer'
+  vlhkost_vzduchu_stop_zalievania:
+    name: stop zalievania pri vlhkosti
+    min: 30
+    max: 100
+    step: 1
+    unit_of_measurement: '%'
+    mode: box
+    icon: 'mdi:water-percent'
+#zapnutie, vypnutie zalievania
+input_boolean:
+  vypnut_zalievanie:
+    name: vypnut zalievanie
+    icon: 'mdi:car-brake-alert'
+  stromy_zapnut_zalievanie_1:
+    name: 1. zalievanie
+    icon: 'mdi:water'
+  stromy_zapnut_zalievanie_2:
+    name: 2. zalievanie
+    icon: 'mdi:water'
+  zahony_zapnut_zalievanie_1:
+    name: 1. zalievanie
+    icon: 'mdi:water'
+  zahony_zapnut_zalievanie_2:
+    name: 2. zalievanie
+    icon: 'mdi:water'
+  kvety_zapnut_zalievanie_1:
+    name: 1. zalievanie
+    icon: 'mdi:water'
+  kvety_zapnut_zalievanie_2:
+    name: 2. zalievanie
+    icon: 'mdi:water'
+  travnik_zapnut_zalievanie_1:
+    name: 1. zalievanie
+    icon: 'mdi:water'
+  travnik_zapnut_zalievanie_2:
+    name: 2. zalievanie
+    icon: 'mdi:water'
+#globalne nastavenie zalievania
+  povolit_teplotu_spustenia_zalievania_2:
+    name: teplota 2. zalievania
+    icon: 'mdi:water'
+#rucne spustenie zalievania	
+  stromy_nudzove_zalievanie:
+    name: nudzove zalievanie
+    icon: 'mdi:water'
+  zahony_nudzove_zalievanie:
+    name: nudzove zalievanie
+    icon: 'mdi:water'
+  kvety_nudzove_zalievanie:
+    name: nudzove zalievanie
+    icon: 'mdi:water'
+  travnik_nudzove_zalievanie:
+    name: nudzove zalievanie
+    icon: 'mdi:water'
+#dni v tyzdni
+  stromy_pondelok:
+    name: pondelok  
+    icon: 'mdi:calendar-today'
+  stromy_utorok:
+    name: utorok  
+    icon: 'mdi:calendar-today'
+  stromy_streda:
+    name: streda  
+    icon: 'mdi:calendar-today'
+  stromy_stvrtok:
+    name: stvrtok  
+    icon: 'mdi:calendar-today'
+  stromy_piatok:
+    name: piatok  
+    icon: 'mdi:calendar-today'
+  stromy_sobota:
+    name: sobota  
+    icon: 'mdi:calendar-today'
+  stromy_nedela:
+    name: nedela  
+    icon: 'mdi:calendar-today'
+  zahony_pondelok:
+    name: pondelok  
+    icon: 'mdi:calendar-today'
+  zahony_utorok:
+    name: utorok  
+    icon: 'mdi:calendar-today'
+  zahony_streda:
+    name: streda  
+    icon: 'mdi:calendar-today'
+  zahony_stvrtok:
+    name: stvrtok  
+    icon: 'mdi:calendar-today'
+  zahony_piatok:
+    name: piatok  
+    icon: 'mdi:calendar-today'
+  zahony_sobota:
+    name: sobota  
+    icon: 'mdi:calendar-today'
+  zahony_nedela:
+    name: nedela  
+    icon: 'mdi:calendar-today'
+  kvety_pondelok:
+    name: pondelok  
+    icon: 'mdi:calendar-today'
+  kvety_utorok:
+    name: utorok  
+    icon: 'mdi:calendar-today'
+  kvety_streda:
+    name: streda  
+    icon: 'mdi:calendar-today'
+  kvety_stvrtok:
+    name: stvrtok  
+    icon: 'mdi:calendar-today'
+  kvety_piatok:
+    name: piatok  
+    icon: 'mdi:calendar-today'
+  kvety_sobota:
+    name: sobota  
+    icon: 'mdi:calendar-today'
+  kvety_nedela:
+    name: nedela  
+    icon: 'mdi:calendar-today'
+  travnik_pondelok:
+    name: pondelok  
+    icon: 'mdi:calendar-today'
+  travnik_utorok:
+    name: utorok  
+    icon: 'mdi:calendar-today'
+  travnik_streda:
+    name: streda  
+    icon: 'mdi:calendar-today'
+  travnik_stvrtok:
+    name: stvrtok  
+    icon: 'mdi:calendar-today'
+  travnik_piatok:
+    name: piatok  
+    icon: 'mdi:calendar-today'
+  travnik_sobota:
+    name: sobota  
+    icon: 'mdi:calendar-today'
+  travnik_nedela:
+    name: nedela  
+    icon: 'mdi:calendar-today'
+#
+#koniec zalievania
+#

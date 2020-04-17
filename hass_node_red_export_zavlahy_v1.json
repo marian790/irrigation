@@ -1,0 +1,4760 @@
+[
+    {
+        "id": "ac020c08.012da",
+        "type": "tab",
+        "label": "zalievanie main",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "f492a4f4.cacf7",
+        "type": "tab",
+        "label": "snimace",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "1789ec23.e7f784",
+        "type": "tab",
+        "label": "zalievanie globalne nastavenie",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "cbaf4de.5bd83b",
+        "type": "tab",
+        "label": "zalievanie zahony",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "4677721b.370c34",
+        "type": "tab",
+        "label": "zalievanie kvety",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "2574cf31.c48ca",
+        "type": "tab",
+        "label": "zalievanie stromy",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "f520b491.13c86",
+        "type": "tab",
+        "label": "zalievanie travnik",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "d48ee4c6.6493a8",
+        "type": "server",
+        "z": "",
+        "name": "Home Assistant",
+        "legacy": false,
+        "addon": true,
+        "rejectUnauthorizedCerts": true,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": false,
+        "cacheJson": true
+    },
+    {
+        "id": "38115caf.415304",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD.MM.YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "5ef8035b.c7d07c",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "hass_mqtt",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "bbeeee6d.57e59",
+        "type": "hass-config",
+        "z": "",
+        "host": "http://localhost",
+        "port": "8123"
+    },
+    {
+        "id": "4025adfe.18e0b4",
+        "type": "comment",
+        "z": "cbaf4de.5bd83b",
+        "name": "okruh zahony",
+        "info": "",
+        "x": 90,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "ab853c9.d6166c",
+        "type": "server-state-changed",
+        "z": "cbaf4de.5bd83b",
+        "name": "zahony_zapnut_zalievanie_1",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.zahony_zapnut_zalievanie_1",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 140,
+        "y": 500,
+        "wires": [
+            [
+                "a22a9238.8960c8"
+            ]
+        ]
+    },
+    {
+        "id": "27eda79d.4fe8d",
+        "type": "server-state-changed",
+        "z": "cbaf4de.5bd83b",
+        "name": "zahony_zapnut_zalievanie_2",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.zahony_zapnut_zalievanie_2",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 140,
+        "y": 680,
+        "wires": [
+            [
+                "6bc16744.0fdad8"
+            ]
+        ]
+    },
+    {
+        "id": "e6acd4f.59bb328",
+        "type": "server-state-changed",
+        "z": "cbaf4de.5bd83b",
+        "name": "zahony_zapnut_nudzove_zalievanie",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.zahony_nudzove_zalievanie",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 160,
+        "y": 860,
+        "wires": [
+            [
+                "68425c7.9ca4a24"
+            ]
+        ]
+    },
+    {
+        "id": "860ec730.482ac8",
+        "type": "server-state-changed",
+        "z": "cbaf4de.5bd83b",
+        "name": "cas_zahony_zalievanie_1",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_datetime.zahony_zalievanie_1",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 130,
+        "y": 560,
+        "wires": [
+            [
+                "a39820f0.e4468"
+            ]
+        ]
+    },
+    {
+        "id": "cf07eb34.7212a8",
+        "type": "server-state-changed",
+        "z": "cbaf4de.5bd83b",
+        "name": "cas_zahony_zalievanie_2",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_datetime.zahony_zalievanie_2",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 130,
+        "y": 740,
+        "wires": [
+            [
+                "58176b02.1ef91c"
+            ]
+        ]
+    },
+    {
+        "id": "bd83d4bb.b7fa5",
+        "type": "server-state-changed",
+        "z": "cbaf4de.5bd83b",
+        "name": "zahony_dlzka_zalievania_1",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_number.zahony_dlzka_zalievania_1",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "num",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 140,
+        "y": 620,
+        "wires": [
+            [
+                "c1518ff1.fe2c5"
+            ]
+        ]
+    },
+    {
+        "id": "da122ec.f1588d",
+        "type": "server-state-changed",
+        "z": "cbaf4de.5bd83b",
+        "name": "zahony_dlzka_zalievania_2",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_number.zahony_dlzka_zalievania_2",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "num",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 140,
+        "y": 800,
+        "wires": [
+            [
+                "75b0f99a.1063a"
+            ]
+        ]
+    },
+    {
+        "id": "ffc4de50.9ecce8",
+        "type": "server-state-changed",
+        "z": "cbaf4de.5bd83b",
+        "name": "zahony_dlzka_nudzove_zalievanie",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_number.zahony_nudzove_zalievanie",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "num",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 160,
+        "y": 920,
+        "wires": [
+            [
+                "c9a61b8f.f63c28"
+            ]
+        ]
+    },
+    {
+        "id": "7138b6a5.45d8a8",
+        "type": "server-state-changed",
+        "z": "cbaf4de.5bd83b",
+        "name": "zahony_pondelok",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.zahony_pondelok",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 110,
+        "y": 80,
+        "wires": [
+            [
+                "4ad47d42.c02e74"
+            ]
+        ]
+    },
+    {
+        "id": "56b11c99.4d68f4",
+        "type": "server-state-changed",
+        "z": "cbaf4de.5bd83b",
+        "name": "zahony_utorok",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.zahony_utorok",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 100,
+        "y": 140,
+        "wires": [
+            [
+                "52585a15.224d4c"
+            ]
+        ]
+    },
+    {
+        "id": "915f4f2e.7af9a8",
+        "type": "server-state-changed",
+        "z": "cbaf4de.5bd83b",
+        "name": "zahony_streda",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.zahony_streda",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 100,
+        "y": 200,
+        "wires": [
+            [
+                "6d58cfd5.f7c5c8"
+            ]
+        ]
+    },
+    {
+        "id": "69fdbb63.bc07e4",
+        "type": "server-state-changed",
+        "z": "cbaf4de.5bd83b",
+        "name": "zahony_stvrtok",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.zahony_stvrtok",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 100,
+        "y": 260,
+        "wires": [
+            [
+                "95ee6cb7.315008"
+            ]
+        ]
+    },
+    {
+        "id": "b10651a9.c1afb",
+        "type": "server-state-changed",
+        "z": "cbaf4de.5bd83b",
+        "name": "zahony_piatok",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.zahony_piatok",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 100,
+        "y": 320,
+        "wires": [
+            [
+                "86ea0039.56ff5"
+            ]
+        ]
+    },
+    {
+        "id": "4398c3a8.37356c",
+        "type": "server-state-changed",
+        "z": "cbaf4de.5bd83b",
+        "name": "zahony_sobota",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.zahony_sobota",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 100,
+        "y": 380,
+        "wires": [
+            [
+                "41fdb39a.794b24"
+            ]
+        ]
+    },
+    {
+        "id": "14cf4b3d.b86aed",
+        "type": "server-state-changed",
+        "z": "cbaf4de.5bd83b",
+        "name": "zahony_nedela",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.zahony_nedela",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 100,
+        "y": 440,
+        "wires": [
+            [
+                "79171cc4.0dea24"
+            ]
+        ]
+    },
+    {
+        "id": "a39820f0.e4468",
+        "type": "function",
+        "z": "cbaf4de.5bd83b",
+        "name": "cas_zahony_zalievanie_1_sekundy",
+        "func": "var cas = msg.payload;\nvar a = cas.split(':');\nmsg.payload = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]); \nglobal.set(\"cas_zahony_zalievanie_1_sekundy\",msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 500,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "58176b02.1ef91c",
+        "type": "function",
+        "z": "cbaf4de.5bd83b",
+        "name": "cas_zahony_zalievanie_2_sekundy",
+        "func": "var cas = msg.payload;\nvar a = cas.split(':');\nmsg.payload = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]); \nglobal.set(\"cas_zahony_zalievanie_2_sekundy\",msg.payload);\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 500,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c1518ff1.fe2c5",
+        "type": "function",
+        "z": "cbaf4de.5bd83b",
+        "name": "zahony_dlzka_zalievania_1_sekundy",
+        "func": "var cas = msg.payload;\nmsg.payload = cas * 60;\nglobal.set(\"zahony_dlzka_zalievania_1_sekundy\",msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 510,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "75b0f99a.1063a",
+        "type": "function",
+        "z": "cbaf4de.5bd83b",
+        "name": "zahony_dlzka_zalievania_2_sekundy",
+        "func": "var cas = msg.payload;\nmsg.payload = cas * 60;\nglobal.set(\"zahony_dlzka_zalievania_2_sekundy\",msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 510,
+        "y": 800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c9a61b8f.f63c28",
+        "type": "function",
+        "z": "cbaf4de.5bd83b",
+        "name": "zahony_dlzka_nudzove_zalievanie_sekundy",
+        "func": "var cas = msg.payload;\nmsg.payload = cas * 60; \nglobal.set(\"zahony_dlzka_nudzove_zalievanie_sekundy\",msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 530,
+        "y": 920,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "52585a15.224d4c",
+        "type": "function",
+        "z": "cbaf4de.5bd83b",
+        "name": "zahony_utorok",
+        "func": "global.set(\"zahony_utorok\", msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 440,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4ad47d42.c02e74",
+        "type": "function",
+        "z": "cbaf4de.5bd83b",
+        "name": "zahony_pondelok",
+        "func": "global.set(\"zahony_pondelok\", msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 450,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6d58cfd5.f7c5c8",
+        "type": "function",
+        "z": "cbaf4de.5bd83b",
+        "name": "zahony_streda",
+        "func": "global.set(\"zahony_streda\", msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 440,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "95ee6cb7.315008",
+        "type": "function",
+        "z": "cbaf4de.5bd83b",
+        "name": "zahony_stvrtok",
+        "func": "global.set(\"zahony_stvrtok\", msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 440,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "86ea0039.56ff5",
+        "type": "function",
+        "z": "cbaf4de.5bd83b",
+        "name": "zahony_piatok",
+        "func": "global.set(\"zahony_piatok\", msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 440,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "41fdb39a.794b24",
+        "type": "function",
+        "z": "cbaf4de.5bd83b",
+        "name": "zahony_sobota",
+        "func": "global.set(\"zahony_sobota\", msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 440,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "79171cc4.0dea24",
+        "type": "function",
+        "z": "cbaf4de.5bd83b",
+        "name": "zahony_nedela",
+        "func": "global.set(\"zahony_nedela\", msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 440,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a22a9238.8960c8",
+        "type": "function",
+        "z": "cbaf4de.5bd83b",
+        "name": "zahony_zapnut_zalievanie_1",
+        "func": "global.set(\"zahony_zapnut_zalievanie_1\", msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 480,
+        "y": 500,
+        "wires": [
+            [
+                "d96385a5.86a8e"
+            ]
+        ]
+    },
+    {
+        "id": "6bc16744.0fdad8",
+        "type": "function",
+        "z": "cbaf4de.5bd83b",
+        "name": "zahony_zapnut_zalievanie_2",
+        "func": "global.set(\"zahony_zapnut_zalievanie_2\", msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 480,
+        "y": 680,
+        "wires": [
+            [
+                "d96385a5.86a8e"
+            ]
+        ]
+    },
+    {
+        "id": "68425c7.9ca4a24",
+        "type": "function",
+        "z": "cbaf4de.5bd83b",
+        "name": "zahony_zapnut_nudzove_zalievanie",
+        "func": "switch (msg.payload) {\n  case true:\n    var today = new Date();\n    var cas = today.getHours() * 60 *60 + today.getMinutes() * 60;\n    //nudzove_zalievanie_zaciatok_cas_sekundy - nastavenie casu zaciatku, na vypocet dlzky trvania\n    global.set(\"nudzove_zalievanie_zaciatok_zahony_cas_sekundy\", cas, \"nudzove_zalievanie_zaciatok_zahony_cas_sekundy\");\n    break;\n  case false:\n    //nudzove_zalievanie_zaciatok_cas_sekundy - ak je vypnute, cas je tak velky, ze nikdy nenastane\n    global.set(\"nudzove_zalievanie_zaciatok_zahony_cas_sekundy\", 1000000, \"nudzove_zalievanie_zaciatok_zahony_cas_sekundy\");\n}\n\n//uloz switch status\nglobal.set(\"zahony_zapnut_nudzove_zalievanie\", msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 510,
+        "y": 860,
+        "wires": [
+            [
+                "d96385a5.86a8e"
+            ]
+        ]
+    },
+    {
+        "id": "1016cc8f.f1d673",
+        "type": "server-state-changed",
+        "z": "1789ec23.e7f784",
+        "name": "teplota predlzenia casov",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_number.teplota_predlzenia_casov",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "num",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 130,
+        "y": 80,
+        "wires": [
+            [
+                "6740711b.b6d39"
+            ]
+        ]
+    },
+    {
+        "id": "51331b7a.7aed04",
+        "type": "server-state-changed",
+        "z": "1789ec23.e7f784",
+        "name": "predlzenie casov",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_number.predlzenie_casov",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "num",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 100,
+        "y": 140,
+        "wires": [
+            [
+                "f9b88e6c.647d9"
+            ]
+        ]
+    },
+    {
+        "id": "97ed150b.cff3e8",
+        "type": "server-state-changed",
+        "z": "1789ec23.e7f784",
+        "name": "minimalna teplota zalievania",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_number.teplota_stop_zalievania",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "num",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 140,
+        "y": 200,
+        "wires": [
+            [
+                "5ef51fb.c23c16"
+            ]
+        ]
+    },
+    {
+        "id": "7b41553f.d18c24",
+        "type": "server-state-changed",
+        "z": "1789ec23.e7f784",
+        "name": "stop zalievania pri vlhkosti",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_number.vlhkost_vzduchu_stop_zalievania",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "num",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 130,
+        "y": 260,
+        "wires": [
+            [
+                "d4d2fbac.15586"
+            ]
+        ]
+    },
+    {
+        "id": "65946f05.0ddb2",
+        "type": "server-state-changed",
+        "z": "1789ec23.e7f784",
+        "name": "vypnut zalievanie",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.vypnut_zalievanie",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 100,
+        "y": 320,
+        "wires": [
+            [
+                "d116ce6e.05cf3"
+            ]
+        ]
+    },
+    {
+        "id": "4895a82b.1be8d",
+        "type": "comment",
+        "z": "1789ec23.e7f784",
+        "name": "globalne nastavenie",
+        "info": "",
+        "x": 110,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "6740711b.b6d39",
+        "type": "function",
+        "z": "1789ec23.e7f784",
+        "name": "teplota_predlzenia_casov",
+        "func": "global.set(\"teplota_predlzenia_casov\", msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 490,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f9b88e6c.647d9",
+        "type": "function",
+        "z": "1789ec23.e7f784",
+        "name": "predlzenie_casov",
+        "func": "global.set(\"predlzenie_casov\", msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 470,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5ef51fb.c23c16",
+        "type": "function",
+        "z": "1789ec23.e7f784",
+        "name": "min_teplota_zalievania",
+        "func": "global.set(\"min_teplota_zalievania\", msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 480,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d4d2fbac.15586",
+        "type": "function",
+        "z": "1789ec23.e7f784",
+        "name": "vlhkost_vzduchu_stop_zalievania",
+        "func": "global.set(\"vlhkost_vzduchu_stop_zalievania\", msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 520,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d116ce6e.05cf3",
+        "type": "function",
+        "z": "1789ec23.e7f784",
+        "name": "vypnut_zalievanie",
+        "func": "global.set(\"vypnut_zalievanie\", msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 470,
+        "y": 320,
+        "wires": [
+            [
+                "1c28f2f.461638d"
+            ]
+        ]
+    },
+    {
+        "id": "4bd9a130.fedb78",
+        "type": "comment",
+        "z": "f492a4f4.cacf7",
+        "name": "snimace",
+        "info": "",
+        "x": 80,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "c5b34855.099468",
+        "type": "server-state-changed",
+        "z": "f492a4f4.cacf7",
+        "name": "horna zahrada teplota vzduchu",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "sensor.4chpro2_u2_r1_si7021_temperature",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "num",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 150,
+        "y": 80,
+        "wires": [
+            [
+                "f8a30753.873848"
+            ]
+        ]
+    },
+    {
+        "id": "e09a305b.8c65b8",
+        "type": "server-state-changed",
+        "z": "f492a4f4.cacf7",
+        "name": "horna zahrada vlhkost vzduchu",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "sensor.4chpro2_u2_r1_si7021_humidity",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "num",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 150,
+        "y": 140,
+        "wires": [
+            [
+                "d889d34f.51812"
+            ]
+        ]
+    },
+    {
+        "id": "eed0280f.b1d03",
+        "type": "server-state-changed",
+        "z": "f492a4f4.cacf7",
+        "name": "dolna zahrada teplota vzduchu",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "sensor.4chpro2_u1_r1_si7021_temperature",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "num",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 150,
+        "y": 200,
+        "wires": [
+            [
+                "f8a30753.873848"
+            ]
+        ]
+    },
+    {
+        "id": "bf2a8273.f8ce38",
+        "type": "server-state-changed",
+        "z": "f492a4f4.cacf7",
+        "name": "dolna zahrada vlhkost vzduchu",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "sensor.4chpro2_u1_r1_si7021_humidity",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "num",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 150,
+        "y": 260,
+        "wires": [
+            [
+                "d889d34f.51812"
+            ]
+        ]
+    },
+    {
+        "id": "c8c0f637.ac3a08",
+        "type": "server-state-changed",
+        "z": "f492a4f4.cacf7",
+        "name": "predna zahrada teplota vzduchu",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "sensor.spinac_mala_brana_si7021_temperature",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "num",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 150,
+        "y": 320,
+        "wires": [
+            [
+                "f8a30753.873848"
+            ]
+        ]
+    },
+    {
+        "id": "3f25febb.3e35da",
+        "type": "server-state-changed",
+        "z": "f492a4f4.cacf7",
+        "name": "predna zahrada vlhkost vzduchu",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "sensor.spinac_mala_brana_si7021_humidity",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "num",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 150,
+        "y": 380,
+        "wires": [
+            [
+                "d889d34f.51812"
+            ]
+        ]
+    },
+    {
+        "id": "d889d34f.51812",
+        "type": "smooth",
+        "z": "f492a4f4.cacf7",
+        "name": "priemerna vonkajsia vlhkost vyhladena",
+        "property": "payload",
+        "action": "mean",
+        "count": "27",
+        "round": "0",
+        "mult": "single",
+        "reduce": false,
+        "x": 560,
+        "y": 380,
+        "wires": [
+            [
+                "e25e3a14.a9e2a"
+            ]
+        ]
+    },
+    {
+        "id": "f8a30753.873848",
+        "type": "smooth",
+        "z": "f492a4f4.cacf7",
+        "name": "priemerna vonkajsia teplota vyhladena",
+        "property": "payload",
+        "action": "mean",
+        "count": "27",
+        "round": "0",
+        "mult": "single",
+        "reduce": false,
+        "x": 550,
+        "y": 80,
+        "wires": [
+            [
+                "75a4782d.66d4c8"
+            ]
+        ]
+    },
+    {
+        "id": "75a4782d.66d4c8",
+        "type": "function",
+        "z": "f492a4f4.cacf7",
+        "name": "priemerna_teplota",
+        "func": "global.set(\"priemerna_teplota\", msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 910,
+        "y": 80,
+        "wires": [
+            [
+                "ffeefb39.2b219"
+            ]
+        ]
+    },
+    {
+        "id": "e25e3a14.a9e2a",
+        "type": "function",
+        "z": "f492a4f4.cacf7",
+        "name": "priemerna_vlhkost",
+        "func": "global.set(\"priemerna_vlhkost\", msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 910,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6a1ac0b3.96c2c",
+        "type": "function",
+        "z": "ac020c08.012da",
+        "name": "aktualny cas a cislo dna v tyzdni (0=pondelok)",
+        "func": "var today = new Date();\nvar a = { payload: today.getDay() };\n\nmsg = { payload: today.getHours() * 60 *60 + today.getMinutes() * 60 };\n\nglobal.set(\"aktualny_den_cislo\",a.payload);\nglobal.set(\"aktualny_cas_sekundy\",msg.payload);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1100,
+        "y": 120,
+        "wires": [
+            [
+                "6f158cf6.5bfd44",
+                "82e3d5af.80e058",
+                "cf4dab5b.c282f8",
+                "dc521fa1.60227"
+            ]
+        ],
+        "outputLabels": [
+            "den"
+        ]
+    },
+    {
+        "id": "31efe46a.f6e70c",
+        "type": "comment",
+        "z": "ac020c08.012da",
+        "name": "spustenie kazdu 1 minutu",
+        "info": "",
+        "x": 230,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "71d20226.caeafc",
+        "type": "inject",
+        "z": "ac020c08.012da",
+        "name": "casova zakladna",
+        "topic": "casova_zakladna_timestamp",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "60",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 210,
+        "y": 240,
+        "wires": [
+            [
+                "c663b6f4.fb9538",
+                "dd37ee8.044a79"
+            ]
+        ]
+    },
+    {
+        "id": "6f158cf6.5bfd44",
+        "type": "function",
+        "z": "ac020c08.012da",
+        "name": "zalievanie zahony",
+        "func": "var akt_cas = msg.payload;\nvar akt_den = global.get(\"aktualny_den_cislo\");\n\n//nastavenie pociatocnych stavov vystupnych dat payload a topic\n//payload=0 ventil zatvoreny, pauload=1 ventil otvoreny\nmsg.payload = 0;\nmsg.topic=\"ventil_zahony\";\nvar manualswitch;\n\n\n//nastavenie premennych\n//nastavenie globalnych parametrov\nvar tepl_predlz_casov = Number(global.get(\"teplota_predlzenia_casov\"));\nvar predlz_casov = Number(global.get(\"predlzenie_casov\"));\nvar min_tepl_zal = Number(global.get(\"min_teplota_zalievania\"));\nvar vlhk_vzd_stop_zal = Number(global.get(\"vlhkost_vzduchu_stop_zalievania\"));\nvar zap_povol_tepl_zal2 = Boolean(global.get(\"povolit_teplotu_spustenia_zalievania_2\"));\nvar povol_tepl_zal2 = Number(global.get(\"teplota_spustenia_zalievania_2\"));\n\n\n//snimace\nvar priem_tepl = Number(global.get(\"priemerna_teplota\"));\nvar priem_vlhk = Number(global.get(\"priemerna_vlhkost\"));\n\n//dni\nvar pon = Boolean(global.get(\"zahony_pondelok\"));\nvar uto = Boolean(global.get(\"zahony_utorok\"));\nvar str = Boolean(global.get(\"zahony_streda\"));\nvar stv = Boolean(global.get(\"zahony_stvrtok\"));\nvar pia = Boolean(global.get(\"zahony_piatok\"));\nvar sob = Boolean(global.get(\"zahony_sobota\"));\nvar ned = Boolean(global.get(\"zahony_nedela\"));\n\n//zalievanie 1.\nvar zap_zal1 = Boolean(global.get(\"zahony_zapnut_zalievanie_1\"));\nvar cas_zah_zal1_sek = Number(global.get(\"cas_zahony_zalievanie_1_sekundy\"));\nvar dlzka_zal1_sek = Number(global.get(\"zahony_dlzka_zalievania_1_sekundy\"));\n//zalievanie 2.\nvar zap_zal2 = Boolean(global.get(\"zahony_zapnut_zalievanie_2\"));\nvar cas_zah_zal2_sek = Number(global.get(\"cas_zahony_zalievanie_2_sekundy\"));\nvar dlzka_zal2_sek = Number(global.get(\"zahony_dlzka_zalievania_2_sekundy\"));\n//nudzove zalievanie\nvar zap_nudz_zal = Boolean(global.get(\"zahony_zapnut_nudzove_zalievanie\"));\nvar dlzka_nudz_zal_sek = Number(global.get(\"zahony_dlzka_nudzove_zalievanie_sekundy\"));\nvar nudz_zal_zac_cas_sekundy = Number(global.get(\"nudzove_zalievanie_zaciatok_zahony_cas_sekundy\", \"nudzove_zalievanie_zaciatok_zahony_cas_sekundy\"));\n\n//msg.payload = nudz_zal_zac_cas_sekundy\n\n//urcenie zhody dnesneho dna a planu dni na zalievanie, ak su zhodne cislo aktualneho dna s cislom naplanovaneho dna a zaroven naplanovany den je povoleny, nastav den na true\nvar den = false;\nif (pon === true) {if (akt_den === 1) {den = true}}\nif (uto === true) {if (akt_den === 2) {den = true}}\nif (str === true) {if (akt_den === 3) {den = true}}\nif (stv === true) {if (akt_den === 4) {den = true}}\nif (pia === true) {if (akt_den === 5) {den = true}}\nif (sob === true) {if (akt_den === 6) {den = true}}\nif (ned === true) {if (akt_den === 0) {den = true}}\nif (zap_nudz_zal===true) {den = true}\n\n//msg.payload = priem_tepl;\n\n//main\n//ak je dnes naplanovany den na zalievanie\nif (den === true) {\n\n    //ak je vonkajsia teplota vyssia, ako minimalna teplota na zalievanie\n    if (priem_tepl >= min_tepl_zal) {\n            \n        //aj je vonkajsia vlhkost vzduchu nizsia ako max vlhkost vzduchu na zalievanie\n        if (vlhk_vzd_stop_zal > priem_vlhk) {\n            \n            //pociatocna hodnota koeficientu predlzenie casu zalievania ak je vonkajsia teplota vyssia ako teplota predlzenia casov\n            var teplkoef = 1;\n            \n            //ak je zakazane 2. zalievanie na zaklade teploty, predlzuj cas zalievania podla teploty\n            if (zap_povol_tepl_zal2 === false){\n                if (priem_tepl >= tepl_predlz_casov) {teplkoef = 1 + (predlz_casov/100)}\n            }\n            \n            //ak je povolene 2. zalievanie na zaklade teploty, ignoruj nastavenie UI a povol 2.zalievanie\n            if (zap_povol_tepl_zal2 === true){\n                if(priem_tepl >= povol_tepl_zal2) {zap_zal2 = true}\n            }\n            \n            //ak je zapnute 1. zalievanie\n            if (zap_zal1 === true) {\n                \n                //ak je prave teraz zhodny cas s nastavenym casom na 1. zalievanie\n                if (akt_cas >= cas_zah_zal1_sek) {\n                    \n                    //vypocet casu, dokedy sa ma zalievat\n                    cas_zah_zal1_sek = cas_zah_zal1_sek + ( dlzka_zal1_sek * teplkoef );\n                    \n                    //ak sa ma este zalievat payload = 1?\n                    if (akt_cas <= cas_zah_zal1_sek) {\n                        \n                        //otvorit ventil\n                        msg.payload = 1;\n                    }\n                }\n            }\n            \n            //ak je zapnute 2. zalievanie\n            if (zap_zal2 === true) {\n               \n                //ak je prave teraz zhodny cas s nastavenym casom na 2. zalievanie\n                if (akt_cas >= cas_zah_zal2_sek) {\n                    \n                    //vypocet casu, dokedy sa ma zalievat\n                    cas_zah_zal2_sek = cas_zah_zal2_sek + ( dlzka_zal2_sek * teplkoef );\n                    \n                    //ak sa ma este zalievat payload = 1?\n                    if (akt_cas <= cas_zah_zal2_sek) {\n                        \n                        //otvorit ventil\n                        msg.payload = 1;\n                    }\n                }\n            }    \n\n            //ak je zapnute nudzove zalievanie\n            if (zap_nudz_zal === true) {\n                \n                //dokedy sa ma zalievat\n                nudz_zal_zac_cas_sekundy = nudz_zal_zac_cas_sekundy + (dlzka_nudz_zal_sek * teplkoef);\n\n                //ak sa ma este zalievat payload = 1?\n                if (akt_cas <= nudz_zal_zac_cas_sekundy) {\n                \n                    //otvorit ventil\n                    msg.payload = 1;\n                    manualswitch = {payload: \"on\"}\n                }\n                //ak sa uz nema zalievat, pretoze nastaveny cas dlzky zalievania uplynul\n                if (akt_cas > nudz_zal_zac_cas_sekundy) {\n                \n                    //zatvorit ventil\n                    msg.payload = 0;\n                    manualswitch = {payload: \"off\"}\n                }\n                \n            }                \n        }\n    }\n}\nreturn [msg, manualswitch];",
+        "outputs": 2,
+        "noerr": 0,
+        "x": 1430,
+        "y": 120,
+        "wires": [
+            [
+                "2c33140e.2f5c5c"
+            ],
+            [
+                "1180a92c.25caaf"
+            ]
+        ],
+        "outputLabels": [
+            "to sonoff valve",
+            "switch manualneho zalievania"
+        ]
+    },
+    {
+        "id": "167e45f6.c99062",
+        "type": "Tasmota Switch",
+        "z": "ac020c08.012da",
+        "broker": "5ef8035b.c7d07c",
+        "device": "4chpro2_u1",
+        "name": "4chpro2_u1 192.168.1.111",
+        "fullTopic": "%topic%/%prefix%/",
+        "cmndPrefix": "cmnd",
+        "statPrefix": "stat",
+        "telePrefix": "tele",
+        "outputs": 4,
+        "onValue": "ON",
+        "offValue": "OFF",
+        "toggleValue": "TOGGLE",
+        "x": 2300,
+        "y": 360,
+        "wires": [
+            [],
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "2c33140e.2f5c5c",
+        "type": "change",
+        "z": "ac020c08.012da",
+        "name": "ventil_zahony zmen topic na r1",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "switch1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1790,
+        "y": 100,
+        "wires": [
+            [
+                "167e45f6.c99062"
+            ]
+        ]
+    },
+    {
+        "id": "1180a92c.25caaf",
+        "type": "api-call-service",
+        "z": "ac020c08.012da",
+        "name": "off zahony_nudzove_zalievanie",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "homeassistant",
+        "service": "turn_{{payload}}",
+        "entityId": "input_boolean.zahony_nudzove_zalievanie",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1790,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "30b22b8a.4f4cfc",
+        "type": "comment",
+        "z": "f520b491.13c86",
+        "name": "okruh travnik",
+        "info": "",
+        "x": 90,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "e5281bc.b54da68",
+        "type": "server-state-changed",
+        "z": "f520b491.13c86",
+        "name": "travnik_zapnut_zalievanie_1",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.travnik_zapnut_zalievanie_1",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 140,
+        "y": 500,
+        "wires": [
+            [
+                "e3b8e13e.d64bd"
+            ]
+        ]
+    },
+    {
+        "id": "4e55212.ba48ae",
+        "type": "server-state-changed",
+        "z": "f520b491.13c86",
+        "name": "travnik_zapnut_zalievanie_2",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.travnik_zapnut_zalievanie_2",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 140,
+        "y": 680,
+        "wires": [
+            [
+                "8ca8c527.21d36"
+            ]
+        ]
+    },
+    {
+        "id": "1a07b115.858c67",
+        "type": "server-state-changed",
+        "z": "f520b491.13c86",
+        "name": "travnik_zapnut_nudzove_zalievanie",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.travnik_nudzove_zalievanie",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 160,
+        "y": 860,
+        "wires": [
+            [
+                "476c33cb.f46c4c"
+            ]
+        ]
+    },
+    {
+        "id": "1e9e99a7.79650e",
+        "type": "server-state-changed",
+        "z": "f520b491.13c86",
+        "name": "cas_travnik_zalievanie_1",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_datetime.travnik_zalievanie_1",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 130,
+        "y": 560,
+        "wires": [
+            [
+                "9820cd2c.4f27d"
+            ]
+        ]
+    },
+    {
+        "id": "7cf68dd0.d0e17c",
+        "type": "server-state-changed",
+        "z": "f520b491.13c86",
+        "name": "cas_travnik_zalievanie_2",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_datetime.travnik_zalievanie_2",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 130,
+        "y": 740,
+        "wires": [
+            [
+                "10117f62.f03b19"
+            ]
+        ]
+    },
+    {
+        "id": "84119bd2.9db428",
+        "type": "server-state-changed",
+        "z": "f520b491.13c86",
+        "name": "travnik_dlzka_zalievania_1",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_number.travnik_dlzka_zalievania_1",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "num",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 130,
+        "y": 620,
+        "wires": [
+            [
+                "fcfe9f8b.ac6468"
+            ]
+        ]
+    },
+    {
+        "id": "f32ffaa6.a024d",
+        "type": "server-state-changed",
+        "z": "f520b491.13c86",
+        "name": "travnik_dlzka_zalievania_2",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_number.travnik_dlzka_zalievania_2",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "num",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 130,
+        "y": 800,
+        "wires": [
+            [
+                "3e1b56f6.5e3b22"
+            ]
+        ]
+    },
+    {
+        "id": "7b76b865.6ab63",
+        "type": "server-state-changed",
+        "z": "f520b491.13c86",
+        "name": "travnik_dlzka_nudzove_zalievanie",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_number.travnik_nudzove_zalievanie",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "num",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 160,
+        "y": 920,
+        "wires": [
+            [
+                "fb5b7986.082ae8"
+            ]
+        ]
+    },
+    {
+        "id": "2bffa1ec.b49d46",
+        "type": "server-state-changed",
+        "z": "f520b491.13c86",
+        "name": "travnik_pondelok",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.travnik_pondelok",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 100,
+        "y": 80,
+        "wires": [
+            [
+                "9c35320.72e4e5"
+            ]
+        ]
+    },
+    {
+        "id": "94091aa5.561ef8",
+        "type": "server-state-changed",
+        "z": "f520b491.13c86",
+        "name": "travnik_utorok",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.travnik_utorok",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 90,
+        "y": 140,
+        "wires": [
+            [
+                "37b319aa.e68636"
+            ]
+        ]
+    },
+    {
+        "id": "3f8f0ca3.0862d4",
+        "type": "server-state-changed",
+        "z": "f520b491.13c86",
+        "name": "travnik_streda",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.travnik_streda",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 90,
+        "y": 200,
+        "wires": [
+            [
+                "c41e0ec.d35bbf"
+            ]
+        ]
+    },
+    {
+        "id": "d513174c.92427",
+        "type": "server-state-changed",
+        "z": "f520b491.13c86",
+        "name": "travnik_stvrtok",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.travnik_stvrtok",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 100,
+        "y": 260,
+        "wires": [
+            [
+                "70a27757.115ab"
+            ]
+        ]
+    },
+    {
+        "id": "e2af67bf.55c24",
+        "type": "server-state-changed",
+        "z": "f520b491.13c86",
+        "name": "travnik_piatok",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.travnik_piatok",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 90,
+        "y": 320,
+        "wires": [
+            [
+                "eefa88b5.c49758"
+            ]
+        ]
+    },
+    {
+        "id": "b683a849.865f88",
+        "type": "server-state-changed",
+        "z": "f520b491.13c86",
+        "name": "travnik_sobota",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.travnik_sobota",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 100,
+        "y": 380,
+        "wires": [
+            [
+                "b127189d.880a6"
+            ]
+        ]
+    },
+    {
+        "id": "3098a94f.42e066",
+        "type": "server-state-changed",
+        "z": "f520b491.13c86",
+        "name": "travnik_nedela",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.travnik_nedela",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 100,
+        "y": 440,
+        "wires": [
+            [
+                "e2cd8e7a.86f508"
+            ]
+        ]
+    },
+    {
+        "id": "9820cd2c.4f27d",
+        "type": "function",
+        "z": "f520b491.13c86",
+        "name": "cas_travnik_zalievanie_1_sekundy",
+        "func": "var cas = msg.payload;\nvar a = cas.split(':');\nmsg.payload = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]); \nglobal.set(\"cas_travnik_zalievanie_1_sekundy\",msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 500,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "10117f62.f03b19",
+        "type": "function",
+        "z": "f520b491.13c86",
+        "name": "cas_travnik_zalievanie_2_sekundy",
+        "func": "var cas = msg.payload;\nvar a = cas.split(':');\nmsg.payload = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]); \nglobal.set(\"cas_travnik_zalievanie_2_sekundy\",msg.payload);\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 500,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fcfe9f8b.ac6468",
+        "type": "function",
+        "z": "f520b491.13c86",
+        "name": "travnik_dlzka_zalievania_1_sekundy",
+        "func": "var cas = msg.payload;\nmsg.payload = cas * 60;\nglobal.set(\"travnik_dlzka_zalievania_1_sekundy\",msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 510,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3e1b56f6.5e3b22",
+        "type": "function",
+        "z": "f520b491.13c86",
+        "name": "travnik_dlzka_zalievania_2_sekundy",
+        "func": "var cas = msg.payload;\nmsg.payload = cas * 60;\nglobal.set(\"travnik_dlzka_zalievania_2_sekundy\",msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 510,
+        "y": 800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fb5b7986.082ae8",
+        "type": "function",
+        "z": "f520b491.13c86",
+        "name": "travnik_dlzka_nudzove_zalievanie_sekundy",
+        "func": "var cas = msg.payload;\nmsg.payload = cas * 60; \nglobal.set(\"travnik_dlzka_nudzove_zalievanie_sekundy\",msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 530,
+        "y": 920,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "37b319aa.e68636",
+        "type": "function",
+        "z": "f520b491.13c86",
+        "name": "travnik_utorok",
+        "func": "global.set(\"travnik_utorok\", msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 440,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9c35320.72e4e5",
+        "type": "function",
+        "z": "f520b491.13c86",
+        "name": "travnik_pondelok",
+        "func": "global.set(\"travnik_pondelok\", msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 450,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c41e0ec.d35bbf",
+        "type": "function",
+        "z": "f520b491.13c86",
+        "name": "travnik_streda",
+        "func": "global.set(\"travnik_streda\", msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 440,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "70a27757.115ab",
+        "type": "function",
+        "z": "f520b491.13c86",
+        "name": "travnik_stvrtok",
+        "func": "global.set(\"travnik_stvrtok\", msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 440,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "eefa88b5.c49758",
+        "type": "function",
+        "z": "f520b491.13c86",
+        "name": "travnik_piatok",
+        "func": "global.set(\"travnik_piatok\", msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 440,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b127189d.880a6",
+        "type": "function",
+        "z": "f520b491.13c86",
+        "name": "travnik_sobota",
+        "func": "global.set(\"travnik_sobota\", msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 440,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e2cd8e7a.86f508",
+        "type": "function",
+        "z": "f520b491.13c86",
+        "name": "travnik_nedela",
+        "func": "global.set(\"travnik_nedela\", msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 440,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e3b8e13e.d64bd",
+        "type": "function",
+        "z": "f520b491.13c86",
+        "name": "travnik_zapnut_zalievanie_1",
+        "func": "global.set(\"travnik_zapnut_zalievanie_1\", msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 480,
+        "y": 500,
+        "wires": [
+            [
+                "d9594ee.afbceb"
+            ]
+        ]
+    },
+    {
+        "id": "8ca8c527.21d36",
+        "type": "function",
+        "z": "f520b491.13c86",
+        "name": "travnik_zapnut_zalievanie_2",
+        "func": "global.set(\"travnik_zapnut_zalievanie_2\", msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 480,
+        "y": 680,
+        "wires": [
+            [
+                "d9594ee.afbceb"
+            ]
+        ]
+    },
+    {
+        "id": "476c33cb.f46c4c",
+        "type": "function",
+        "z": "f520b491.13c86",
+        "name": "travnik_zapnut_nudzove_zalievanie",
+        "func": "switch (msg.payload) {\n  case true:\n    var today = new Date();\n    var cas = today.getHours() * 60 *60 + today.getMinutes() * 60;\n    //nudzove_zalievanie_zaciatok_cas_sekundy - nastavenie casu zaciatku, na vypocet dlzky trvania\n    global.set(\"nudzove_zalievanie_zaciatok_travnik_cas_sekundy\", cas, \"nudzove_zalievanie_zaciatok_travnik_cas_sekundy\");\n    break;\n  case false:\n    //nudzove_zalievanie_zaciatok_cas_sekundy - ak je vypnute, cas je tak velky, ze nikdy nenastane\n    global.set(\"nudzove_zalievanie_zaciatok_travnik_cas_sekundy\", 1000000, \"nudzove_zalievanie_zaciatok_travnik_cas_sekundy\");\n}\n\n//uloz switch status\nglobal.set(\"travnik_zapnut_nudzove_zalievanie\", msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 500,
+        "y": 860,
+        "wires": [
+            [
+                "d9594ee.afbceb"
+            ]
+        ]
+    },
+    {
+        "id": "82e3d5af.80e058",
+        "type": "function",
+        "z": "ac020c08.012da",
+        "name": "zalievanie travnik",
+        "func": "var akt_cas = msg.payload;\nvar akt_den = global.get(\"aktualny_den_cislo\");\n\n//nastavenie pociatocnych stavov vystupnych dat payload a topic\n//payload=0 ventil zatvoreny, pauload=1 ventil otvoreny\nmsg.payload = 0;\nmsg.topic=\"ventil_travnik\";\nvar manualswitch;\n\n\n//nastavenie premennych\n//nastavenie globalnych parametrov\nvar tepl_predlz_casov = Number(global.get(\"teplota_predlzenia_casov\"));\nvar predlz_casov = Number(global.get(\"predlzenie_casov\"));\nvar min_tepl_zal = Number(global.get(\"min_teplota_zalievania\"));\nvar vlhk_vzd_stop_zal = Number(global.get(\"vlhkost_vzduchu_stop_zalievania\"));\nvar zap_povol_tepl_zal2 = Boolean(global.get(\"povolit_teplotu_spustenia_zalievania_2\"));\nvar povol_tepl_zal2 = Number(global.get(\"teplota_spustenia_zalievania_2\"));\n\n//snimace\nvar priem_tepl = Number(global.get(\"priemerna_teplota\"));\nvar priem_vlhk = Number(global.get(\"priemerna_vlhkost\"));\n\n//dni\nvar pon = Boolean(global.get(\"travnik_pondelok\"));\nvar uto = Boolean(global.get(\"travnik_utorok\"));\nvar str = Boolean(global.get(\"travnik_streda\"));\nvar stv = Boolean(global.get(\"travnik_stvrtok\"));\nvar pia = Boolean(global.get(\"travnik_piatok\"));\nvar sob = Boolean(global.get(\"travnik_sobota\"));\nvar ned = Boolean(global.get(\"travnik_nedela\"));\n\n//zalievanie 1.\nvar zap_zal1 = Boolean(global.get(\"travnik_zapnut_zalievanie_1\"));\nvar cas_zah_zal1_sek = Number(global.get(\"cas_travnik_zalievanie_1_sekundy\"));\nvar dlzka_zal1_sek = Number(global.get(\"travnik_dlzka_zalievania_1_sekundy\"));\n//zalievanie 2.\nvar zap_zal2 = Boolean(global.get(\"travnik_zapnut_zalievanie_2\"));\nvar cas_zah_zal2_sek = Number(global.get(\"cas_travnik_zalievanie_2_sekundy\"));\nvar dlzka_zal2_sek = Number(global.get(\"travnik_dlzka_zalievania_2_sekundy\"));\n//nudzove zalievanie\nvar zap_nudz_zal = Boolean(global.get(\"travnik_zapnut_nudzove_zalievanie\"));\nvar dlzka_nudz_zal_sek = Number(global.get(\"travnik_dlzka_nudzove_zalievanie_sekundy\"));\nvar nudz_zal_zac_cas_sekundy = Number(global.get(\"nudzove_zalievanie_zaciatok_travnik_cas_sekundy\", \"nudzove_zalievanie_zaciatok_travnik_cas_sekundy\"));\n\n//msg.payload = nudz_zal_zac_cas_sekundy\n\n//urcenie zhody dnesneho dna a planu dni na zalievanie, ak su zhodne cislo aktualneho dna s cislom naplanovaneho dna a zaroven naplanovany den je povoleny, nastav den na true\nvar den = false;\nif (pon === true) {if (akt_den === 1) {den = true}}\nif (uto === true) {if (akt_den === 2) {den = true}}\nif (str === true) {if (akt_den === 3) {den = true}}\nif (stv === true) {if (akt_den === 4) {den = true}}\nif (pia === true) {if (akt_den === 5) {den = true}}\nif (sob === true) {if (akt_den === 6) {den = true}}\nif (ned === true) {if (akt_den === 0) {den = true}}\nif (zap_nudz_zal===true) {den = true}\n\n//msg.payload = priem_tepl;\n\n//main\n//ak je dnes naplanovany den na zalievanie\nif (den === true) {\n\n    //ak je vonkajsia teplota vyssia, ako minimalna teplota na zalievanie\n    if (priem_tepl >= min_tepl_zal) {\n            \n        //aj je vonkajsia vlhkost vzduchu nizsia ako max vlhkost vzduchu na zalievanie\n        if (vlhk_vzd_stop_zal > priem_vlhk) {\n            \n            //pociatocna hodnota koeficientu predlzenie casu zalievania ak je vonkajsia teplota vyssia ako teplota predlzenia casov\n            var teplkoef = 1;\n            \n            //ak je zakazane 2. zalievanie na zaklade teploty, predlzuj cas zalievania podla teploty\n            if (zap_povol_tepl_zal2 === false){\n                if (priem_tepl >= tepl_predlz_casov) {teplkoef = 1 + (predlz_casov/100)}\n            }\n            \n            //ak je povolene 2. zalievanie na zaklade teploty, ignoruj nastavenie UI a povol 2.zalievanie\n            if (zap_povol_tepl_zal2 === true){\n                if(priem_tepl >= povol_tepl_zal2) {zap_zal2 = true}\n            }\n            \n            //ak je zapnute 1. zalievanie\n            if (zap_zal1 === true) {\n                \n                //ak je prave teraz zhodny cas s nastavenym casom na 1. zalievanie\n                if (akt_cas >= cas_zah_zal1_sek) {\n                    \n                    //vypocet casu, dokedy sa ma zalievat\n                    cas_zah_zal1_sek = cas_zah_zal1_sek + ( dlzka_zal1_sek * teplkoef );\n                    \n                    //ak sa ma este zalievat payload = 1?\n                    if (akt_cas <= cas_zah_zal1_sek) {\n                        \n                        //otvorit ventil\n                        msg.payload = 1;\n                    }\n                }\n            }\n            \n            //ak je zapnute 2. zalievanie\n            if (zap_zal2 === true) {\n               \n                //ak je prave teraz zhodny cas s nastavenym casom na 2. zalievanie\n                if (akt_cas >= cas_zah_zal2_sek) {\n                    \n                    //vypocet casu, dokedy sa ma zalievat\n                    cas_zah_zal2_sek = cas_zah_zal2_sek + ( dlzka_zal2_sek * teplkoef );\n                    \n                    //ak sa ma este zalievat payload = 1?\n                    if (akt_cas <= cas_zah_zal2_sek) {\n                        \n                        //otvorit ventil\n                        msg.payload = 1;\n                    }\n                }\n            }    \n\n            //ak je zapnute nudzove zalievanie\n            if (zap_nudz_zal === true) {\n                \n                //dokedy sa ma zalievat\n                nudz_zal_zac_cas_sekundy = nudz_zal_zac_cas_sekundy + (dlzka_nudz_zal_sek * teplkoef);\n\n                //ak sa ma este zalievat payload = 1?\n                if (akt_cas <= nudz_zal_zac_cas_sekundy) {\n                \n                    //otvorit ventil\n                    msg.payload = 1;\n                    manualswitch = {payload: \"on\"}\n                }\n                //ak sa uz nema zalievat, pretoze nastaveny cas dlzky zalievania uplynul\n                if (akt_cas > nudz_zal_zac_cas_sekundy) {\n                \n                    //zatvorit ventil\n                    msg.payload = 0;\n                    manualswitch = {payload: \"off\"}\n                }\n                \n            }                \n        }\n    }\n}\nreturn [msg, manualswitch];",
+        "outputs": 2,
+        "noerr": 0,
+        "x": 1450,
+        "y": 900,
+        "wires": [
+            [
+                "ec553bf0.03c968"
+            ],
+            [
+                "60873ad.2789044"
+            ]
+        ],
+        "outputLabels": [
+            "to sonoff valve",
+            "switch manualneho zalievania"
+        ]
+    },
+    {
+        "id": "ec553bf0.03c968",
+        "type": "change",
+        "z": "ac020c08.012da",
+        "name": "ventil_travnik zmen topic na r1",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "switch1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1790,
+        "y": 880,
+        "wires": [
+            [
+                "72566b3a.4ce684"
+            ]
+        ]
+    },
+    {
+        "id": "60873ad.2789044",
+        "type": "api-call-service",
+        "z": "ac020c08.012da",
+        "name": "off travnik_nudzove_zalievanie",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "homeassistant",
+        "service": "turn_{{payload}}",
+        "entityId": "input_boolean.travnik_nudzove_zalievanie",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1790,
+        "y": 960,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "72566b3a.4ce684",
+        "type": "Tasmota Switch",
+        "z": "ac020c08.012da",
+        "broker": "5ef8035b.c7d07c",
+        "device": "4chpro2_u3",
+        "name": "4chpro2_u3 192.168.1.108",
+        "fullTopic": "%topic%/%prefix%/",
+        "cmndPrefix": "cmnd",
+        "statPrefix": "stat",
+        "telePrefix": "tele",
+        "outputs": 4,
+        "onValue": "ON",
+        "offValue": "OFF",
+        "toggleValue": "TOGGLE",
+        "x": 2300,
+        "y": 880,
+        "wires": [
+            [],
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "41974c03.9c00a4",
+        "type": "comment",
+        "z": "ac020c08.012da",
+        "name": "automatika zalievania zahony",
+        "info": "",
+        "x": 1460,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "4d6e6346.344fec",
+        "type": "comment",
+        "z": "ac020c08.012da",
+        "name": "automatika zalievania travnik",
+        "info": "",
+        "x": 1480,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "577bbd5b.73ee24",
+        "type": "comment",
+        "z": "ac020c08.012da",
+        "name": "aktualny den a cas",
+        "info": "",
+        "x": 1010,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "a37963a5.42fb6",
+        "type": "comment",
+        "z": "ac020c08.012da",
+        "name": "sonoff spinac",
+        "info": "",
+        "x": 2250,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "e39768a5.a8e4c8",
+        "type": "comment",
+        "z": "ac020c08.012da",
+        "name": "sonoff spinac",
+        "info": "",
+        "x": 2250,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "41c85bd5.2a2dd4",
+        "type": "comment",
+        "z": "ac020c08.012da",
+        "name": "nastavenie cisla rele",
+        "info": "",
+        "x": 1760,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "76c9845d.2065cc",
+        "type": "comment",
+        "z": "ac020c08.012da",
+        "name": "nastavenie cisla rele",
+        "info": "",
+        "x": 1760,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "eb866c65.601d08",
+        "type": "comment",
+        "z": "ac020c08.012da",
+        "name": "vypnutie spinaca v Hass UI",
+        "info": "",
+        "x": 1780,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "777acfd2.ebfb88",
+        "type": "comment",
+        "z": "ac020c08.012da",
+        "name": "vypnutie spinaca v Hass UI",
+        "info": "",
+        "x": 1780,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "db990fe5.df5978",
+        "type": "Tasmota Switch",
+        "z": "ac020c08.012da",
+        "broker": "5ef8035b.c7d07c",
+        "device": "4chpro2_u2",
+        "name": "4chpro2_u2 192.168.1.112",
+        "fullTopic": "%topic%/%prefix%/",
+        "cmndPrefix": "cmnd",
+        "statPrefix": "stat",
+        "telePrefix": "tele",
+        "outputs": 4,
+        "onValue": "ON",
+        "offValue": "OFF",
+        "toggleValue": "TOGGLE",
+        "x": 2300,
+        "y": 620,
+        "wires": [
+            [],
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "4433ac33.b20404",
+        "type": "comment",
+        "z": "4677721b.370c34",
+        "name": "okruh kvety",
+        "info": "",
+        "x": 90,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "8a4a1122.f3cae",
+        "type": "server-state-changed",
+        "z": "4677721b.370c34",
+        "name": "kvety_zapnut_zalievanie_1",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.kvety_zapnut_zalievanie_1",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 140,
+        "y": 500,
+        "wires": [
+            [
+                "e4b7cd03.dd3478"
+            ]
+        ]
+    },
+    {
+        "id": "4dac0708.e3296",
+        "type": "server-state-changed",
+        "z": "4677721b.370c34",
+        "name": "kvety_zapnut_zalievanie_2",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.kvety_zapnut_zalievanie_2",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 140,
+        "y": 680,
+        "wires": [
+            [
+                "b55d2ff.a1fcdd"
+            ]
+        ]
+    },
+    {
+        "id": "53609f92.08adc",
+        "type": "server-state-changed",
+        "z": "4677721b.370c34",
+        "name": "kvety_zapnut_nudzove_zalievanie",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.kvety_nudzove_zalievanie",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 160,
+        "y": 860,
+        "wires": [
+            [
+                "a4ae62c6.59cf"
+            ]
+        ]
+    },
+    {
+        "id": "99628c63.0b7f58",
+        "type": "server-state-changed",
+        "z": "4677721b.370c34",
+        "name": "cas_kvety_zalievanie_1",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_datetime.kvety_zalievanie_1",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 130,
+        "y": 560,
+        "wires": [
+            [
+                "54e79bdf.fdff94"
+            ]
+        ]
+    },
+    {
+        "id": "8be69848.b8ef18",
+        "type": "server-state-changed",
+        "z": "4677721b.370c34",
+        "name": "cas_kvety_zalievanie_2",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_datetime.kvety_zalievanie_2",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 130,
+        "y": 740,
+        "wires": [
+            [
+                "c1909755.fb2548"
+            ]
+        ]
+    },
+    {
+        "id": "e1bfb49e.45779",
+        "type": "server-state-changed",
+        "z": "4677721b.370c34",
+        "name": "kvety_dlzka_zalievania_1",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_number.kvety_dlzka_zalievania_1",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "num",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 130,
+        "y": 620,
+        "wires": [
+            [
+                "7e1b4147.7f9fc8"
+            ]
+        ]
+    },
+    {
+        "id": "7c04283e.556fe8",
+        "type": "server-state-changed",
+        "z": "4677721b.370c34",
+        "name": "kvety_dlzka_zalievania_2",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_number.kvety_dlzka_zalievania_2",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "num",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 130,
+        "y": 800,
+        "wires": [
+            [
+                "19f88782.f87dc"
+            ]
+        ]
+    },
+    {
+        "id": "4a1a5ad7.79bf1c",
+        "type": "server-state-changed",
+        "z": "4677721b.370c34",
+        "name": "kvety_dlzka_nudzove_zalievanie",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_number.kvety_nudzove_zalievanie",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "num",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 150,
+        "y": 920,
+        "wires": [
+            [
+                "b8ef5ef6.040c9"
+            ]
+        ]
+    },
+    {
+        "id": "2c44ea05.34b15e",
+        "type": "server-state-changed",
+        "z": "4677721b.370c34",
+        "name": "kvety_pondelok",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.kvety_pondelok",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 100,
+        "y": 80,
+        "wires": [
+            [
+                "6f94aea0.7352d"
+            ]
+        ]
+    },
+    {
+        "id": "3093eb5b.da1674",
+        "type": "server-state-changed",
+        "z": "4677721b.370c34",
+        "name": "kvety_utorok",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.kvety_utorok",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 90,
+        "y": 140,
+        "wires": [
+            [
+                "5ed41ee7.03f078"
+            ]
+        ]
+    },
+    {
+        "id": "224e58ec.ecd028",
+        "type": "server-state-changed",
+        "z": "4677721b.370c34",
+        "name": "kvety_streda",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.kvety_streda",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 90,
+        "y": 200,
+        "wires": [
+            [
+                "ba9fc892.73a178"
+            ]
+        ]
+    },
+    {
+        "id": "7f99702d.3f0568",
+        "type": "server-state-changed",
+        "z": "4677721b.370c34",
+        "name": "kvety_stvrtok",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.kvety_stvrtok",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 90,
+        "y": 260,
+        "wires": [
+            [
+                "7affbf15.305b9"
+            ]
+        ]
+    },
+    {
+        "id": "e54daf7d.37e238",
+        "type": "server-state-changed",
+        "z": "4677721b.370c34",
+        "name": "kvety_piatok",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.kvety_piatok",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 90,
+        "y": 320,
+        "wires": [
+            [
+                "772b6678.72647"
+            ]
+        ]
+    },
+    {
+        "id": "7edba3e4.10504c",
+        "type": "server-state-changed",
+        "z": "4677721b.370c34",
+        "name": "kvety_sobota",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.kvety_sobota",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 90,
+        "y": 380,
+        "wires": [
+            [
+                "7c73b559.009b24"
+            ]
+        ]
+    },
+    {
+        "id": "d90da467.cd90e",
+        "type": "server-state-changed",
+        "z": "4677721b.370c34",
+        "name": "kvety_nedela",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.kvety_nedela",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 90,
+        "y": 440,
+        "wires": [
+            [
+                "c85f65df.f4d69"
+            ]
+        ]
+    },
+    {
+        "id": "54e79bdf.fdff94",
+        "type": "function",
+        "z": "4677721b.370c34",
+        "name": "cas_kvety_zalievanie_1_sekundy",
+        "func": "var cas = msg.payload;\nvar a = cas.split(':');\nmsg.payload = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]); \nglobal.set(\"cas_kvety_zalievanie_1_sekundy\",msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 500,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c1909755.fb2548",
+        "type": "function",
+        "z": "4677721b.370c34",
+        "name": "cas_kvety_zalievanie_2_sekundy",
+        "func": "var cas = msg.payload;\nvar a = cas.split(':');\nmsg.payload = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]); \nglobal.set(\"cas_kvety_zalievanie_2_sekundy\",msg.payload);\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 500,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7e1b4147.7f9fc8",
+        "type": "function",
+        "z": "4677721b.370c34",
+        "name": "kvety_dlzka_zalievania_1_sekundy",
+        "func": "var cas = msg.payload;\nmsg.payload = cas * 60;\nglobal.set(\"kvety_dlzka_zalievania_1_sekundy\",msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 510,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "19f88782.f87dc",
+        "type": "function",
+        "z": "4677721b.370c34",
+        "name": "kvety_dlzka_zalievania_2_sekundy",
+        "func": "var cas = msg.payload;\nmsg.payload = cas * 60;\nglobal.set(\"kvety_dlzka_zalievania_2_sekundy\",msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 510,
+        "y": 800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b8ef5ef6.040c9",
+        "type": "function",
+        "z": "4677721b.370c34",
+        "name": "kvety_dlzka_nudzove_zalievanie_sekundy",
+        "func": "var cas = msg.payload;\nmsg.payload = cas * 60; \nglobal.set(\"kvety_dlzka_nudzove_zalievanie_sekundy\",msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 530,
+        "y": 920,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5ed41ee7.03f078",
+        "type": "function",
+        "z": "4677721b.370c34",
+        "name": "kvety_utorok",
+        "func": "global.set(\"kvety_utorok\", msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 430,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6f94aea0.7352d",
+        "type": "function",
+        "z": "4677721b.370c34",
+        "name": "kvety_pondelok",
+        "func": "global.set(\"kvety_pondelok\", msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 440,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ba9fc892.73a178",
+        "type": "function",
+        "z": "4677721b.370c34",
+        "name": "kvety_streda",
+        "func": "global.set(\"kvety_streda\", msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 430,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7affbf15.305b9",
+        "type": "function",
+        "z": "4677721b.370c34",
+        "name": "kvety_stvrtok",
+        "func": "global.set(\"kvety_stvrtok\", msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 440,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "772b6678.72647",
+        "type": "function",
+        "z": "4677721b.370c34",
+        "name": "kvety_piatok",
+        "func": "global.set(\"kvety_piatok\", msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 430,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7c73b559.009b24",
+        "type": "function",
+        "z": "4677721b.370c34",
+        "name": "kvety_sobota",
+        "func": "global.set(\"kvety_sobota\", msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 440,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c85f65df.f4d69",
+        "type": "function",
+        "z": "4677721b.370c34",
+        "name": "kvety_nedela",
+        "func": "global.set(\"kvety_nedela\", msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 440,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e4b7cd03.dd3478",
+        "type": "function",
+        "z": "4677721b.370c34",
+        "name": "kvety_zapnut_zalievanie_1",
+        "func": "global.set(\"kvety_zapnut_zalievanie_1\", msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 480,
+        "y": 500,
+        "wires": [
+            [
+                "9a2b1f02.c8978"
+            ]
+        ]
+    },
+    {
+        "id": "b55d2ff.a1fcdd",
+        "type": "function",
+        "z": "4677721b.370c34",
+        "name": "kvety_zapnut_zalievanie_2",
+        "func": "global.set(\"kvety_zapnut_zalievanie_2\", msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 480,
+        "y": 680,
+        "wires": [
+            [
+                "9a2b1f02.c8978"
+            ]
+        ]
+    },
+    {
+        "id": "a4ae62c6.59cf",
+        "type": "function",
+        "z": "4677721b.370c34",
+        "name": "kvety_zapnut_nudzove_zalievanie",
+        "func": "switch (msg.payload) {\n  case true:\n    var today = new Date();\n    var cas = today.getHours() * 60 *60 + today.getMinutes() * 60;\n    //nudzove_zalievanie_zaciatok_cas_sekundy - nastavenie casu zaciatku, na vypocet dlzky trvania\n    global.set(\"nudzove_zalievanie_zaciatok_kvety_cas_sekundy\", cas, \"nudzove_zalievanie_zaciatok_kvety_cas_sekundy\");\n    break;\n  case false:\n    //nudzove_zalievanie_zaciatok_cas_sekundy - ak je vypnute, cas je tak velky, ze nikdy nenastane\n    global.set(\"nudzove_zalievanie_zaciatok_kvety_cas_sekundy\", 1000000, \"nudzove_zalievanie_zaciatok_kvety_cas_sekundy\");\n}\n\n//uloz switch status\nglobal.set(\"kvety_zapnut_nudzove_zalievanie\", msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 500,
+        "y": 860,
+        "wires": [
+            [
+                "9a2b1f02.c8978"
+            ]
+        ]
+    },
+    {
+        "id": "44ad1bd5.403894",
+        "type": "comment",
+        "z": "2574cf31.c48ca",
+        "name": "okruh stromy",
+        "info": "",
+        "x": 90,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "b9786d51.adaf18",
+        "type": "server-state-changed",
+        "z": "2574cf31.c48ca",
+        "name": "stromy_zapnut_zalievanie_1",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.stromy_zapnut_zalievanie_1",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 140,
+        "y": 500,
+        "wires": [
+            [
+                "e465a0cf.5f57b"
+            ]
+        ]
+    },
+    {
+        "id": "1f3a43ce.0ccbe4",
+        "type": "server-state-changed",
+        "z": "2574cf31.c48ca",
+        "name": "stromy_zapnut_zalievanie_2",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.stromy_zapnut_zalievanie_2",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 140,
+        "y": 680,
+        "wires": [
+            [
+                "ff6f95dc.1afdf"
+            ]
+        ]
+    },
+    {
+        "id": "fb96f2f6.12483",
+        "type": "server-state-changed",
+        "z": "2574cf31.c48ca",
+        "name": "stromy_zapnut_nudzove_zalievanie",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.stromy_nudzove_zalievanie",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 160,
+        "y": 860,
+        "wires": [
+            [
+                "b598c323.33ad9"
+            ]
+        ]
+    },
+    {
+        "id": "f4c282ec.2b28d8",
+        "type": "server-state-changed",
+        "z": "2574cf31.c48ca",
+        "name": "cas_stromy_zalievanie_1",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_datetime.stromy_zalievanie_1",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 130,
+        "y": 560,
+        "wires": [
+            [
+                "9a0a4d5.699563"
+            ]
+        ]
+    },
+    {
+        "id": "8e8bc575.22187",
+        "type": "server-state-changed",
+        "z": "2574cf31.c48ca",
+        "name": "cas_stromy_zalievanie_2",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_datetime.stromy_zalievanie_2",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 130,
+        "y": 740,
+        "wires": [
+            [
+                "49b85f55.5267f"
+            ]
+        ]
+    },
+    {
+        "id": "fed1d371.f766a",
+        "type": "server-state-changed",
+        "z": "2574cf31.c48ca",
+        "name": "stromy_dlzka_zalievania_1",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_number.stromy_dlzka_zalievania_1",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "num",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 140,
+        "y": 620,
+        "wires": [
+            [
+                "b815af46.6fd62"
+            ]
+        ]
+    },
+    {
+        "id": "b22118de.f3b3f8",
+        "type": "server-state-changed",
+        "z": "2574cf31.c48ca",
+        "name": "stromy_dlzka_zalievania_2",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_number.stromy_dlzka_zalievania_2",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "num",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 140,
+        "y": 800,
+        "wires": [
+            [
+                "1560652d.730373"
+            ]
+        ]
+    },
+    {
+        "id": "fbe3ad89.c7525",
+        "type": "server-state-changed",
+        "z": "2574cf31.c48ca",
+        "name": "stromy_dlzka_nudzove_zalievanie",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_number.stromy_nudzove_zalievanie",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "num",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 160,
+        "y": 920,
+        "wires": [
+            [
+                "10a8e523.cd6c13"
+            ]
+        ]
+    },
+    {
+        "id": "b6fcbdc5.46144",
+        "type": "server-state-changed",
+        "z": "2574cf31.c48ca",
+        "name": "stromy_pondelok",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.stromy_pondelok",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 110,
+        "y": 80,
+        "wires": [
+            [
+                "394da35.c85de5c"
+            ]
+        ]
+    },
+    {
+        "id": "45d846d.b77e2b8",
+        "type": "server-state-changed",
+        "z": "2574cf31.c48ca",
+        "name": "stromy_utorok",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.stromy_utorok",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 100,
+        "y": 140,
+        "wires": [
+            [
+                "a4e97515.482b5"
+            ]
+        ]
+    },
+    {
+        "id": "739954ea.48d5fc",
+        "type": "server-state-changed",
+        "z": "2574cf31.c48ca",
+        "name": "stromy_streda",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.stromy_streda",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 100,
+        "y": 200,
+        "wires": [
+            [
+                "e48f2fb7.025478"
+            ]
+        ]
+    },
+    {
+        "id": "34a94776.889978",
+        "type": "server-state-changed",
+        "z": "2574cf31.c48ca",
+        "name": "stromy_stvrtok",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.stromy_stvrtok",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 100,
+        "y": 260,
+        "wires": [
+            [
+                "1c0a370a.d9ff61"
+            ]
+        ]
+    },
+    {
+        "id": "4ccfe6cd.682228",
+        "type": "server-state-changed",
+        "z": "2574cf31.c48ca",
+        "name": "stromy_piatok",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.stromy_piatok",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 100,
+        "y": 320,
+        "wires": [
+            [
+                "4e28aae9.1fdd5c"
+            ]
+        ]
+    },
+    {
+        "id": "d7768c3f.093d68",
+        "type": "server-state-changed",
+        "z": "2574cf31.c48ca",
+        "name": "stromy_sobota",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.stromy_sobota",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 100,
+        "y": 380,
+        "wires": [
+            [
+                "b4708438.67136"
+            ]
+        ]
+    },
+    {
+        "id": "f6df84.413a188",
+        "type": "server-state-changed",
+        "z": "2574cf31.c48ca",
+        "name": "stromy_nedela",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.stromy_nedela",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 100,
+        "y": 440,
+        "wires": [
+            [
+                "9df4308f.9fa23"
+            ]
+        ]
+    },
+    {
+        "id": "9a0a4d5.699563",
+        "type": "function",
+        "z": "2574cf31.c48ca",
+        "name": "cas_stromy_zalievanie_1_sekundy",
+        "func": "var cas = msg.payload;\nvar a = cas.split(':');\nmsg.payload = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]); \nglobal.set(\"cas_stromy_zalievanie_1_sekundy\",msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 510,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "49b85f55.5267f",
+        "type": "function",
+        "z": "2574cf31.c48ca",
+        "name": "cas_stromy_zalievanie_2_sekundy",
+        "func": "var cas = msg.payload;\nvar a = cas.split(':');\nmsg.payload = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]); \nglobal.set(\"cas_stromy_zalievanie_2_sekundy\",msg.payload);\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 510,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b815af46.6fd62",
+        "type": "function",
+        "z": "2574cf31.c48ca",
+        "name": "stromy_dlzka_zalievania_1_sekundy",
+        "func": "var cas = msg.payload;\nmsg.payload = cas * 60;\nglobal.set(\"stromy_dlzka_zalievania_1_sekundy\",msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 510,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1560652d.730373",
+        "type": "function",
+        "z": "2574cf31.c48ca",
+        "name": "stromy_dlzka_zalievania_2_sekundy",
+        "func": "var cas = msg.payload;\nmsg.payload = cas * 60;\nglobal.set(\"stromy_dlzka_zalievania_2_sekundy\",msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 510,
+        "y": 800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "10a8e523.cd6c13",
+        "type": "function",
+        "z": "2574cf31.c48ca",
+        "name": "stromy_dlzka_nudzove_zalievanie_sekundy",
+        "func": "var cas = msg.payload;\nmsg.payload = cas * 60; \nglobal.set(\"stromy_dlzka_nudzove_zalievanie_sekundy\",msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 530,
+        "y": 920,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a4e97515.482b5",
+        "type": "function",
+        "z": "2574cf31.c48ca",
+        "name": "stromy_utorok",
+        "func": "global.set(\"stromy_utorok\", msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 440,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "394da35.c85de5c",
+        "type": "function",
+        "z": "2574cf31.c48ca",
+        "name": "stromy_pondelok",
+        "func": "global.set(\"stromy_pondelok\", msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 450,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e48f2fb7.025478",
+        "type": "function",
+        "z": "2574cf31.c48ca",
+        "name": "stromy_streda",
+        "func": "global.set(\"stromy_streda\", msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 440,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1c0a370a.d9ff61",
+        "type": "function",
+        "z": "2574cf31.c48ca",
+        "name": "stromy_stvrtok",
+        "func": "global.set(\"stromy_stvrtok\", msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 440,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4e28aae9.1fdd5c",
+        "type": "function",
+        "z": "2574cf31.c48ca",
+        "name": "stromy_piatok",
+        "func": "global.set(\"stromy_piatok\", msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 440,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b4708438.67136",
+        "type": "function",
+        "z": "2574cf31.c48ca",
+        "name": "stromy_sobota",
+        "func": "global.set(\"stromy_sobota\", msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 440,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9df4308f.9fa23",
+        "type": "function",
+        "z": "2574cf31.c48ca",
+        "name": "stromy_nedela",
+        "func": "global.set(\"stromy_nedela\", msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 440,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e465a0cf.5f57b",
+        "type": "function",
+        "z": "2574cf31.c48ca",
+        "name": "stromy_zapnut_zalievanie_1",
+        "func": "global.set(\"stromy_zapnut_zalievanie_1\", msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 480,
+        "y": 500,
+        "wires": [
+            [
+                "4c2cc9cf.99d6e8"
+            ]
+        ]
+    },
+    {
+        "id": "ff6f95dc.1afdf",
+        "type": "function",
+        "z": "2574cf31.c48ca",
+        "name": "stromy_zapnut_zalievanie_2",
+        "func": "global.set(\"stromy_zapnut_zalievanie_2\", msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 480,
+        "y": 680,
+        "wires": [
+            [
+                "4c2cc9cf.99d6e8"
+            ]
+        ]
+    },
+    {
+        "id": "b598c323.33ad9",
+        "type": "function",
+        "z": "2574cf31.c48ca",
+        "name": "stromy_zapnut_nudzove_zalievanie",
+        "func": "switch (msg.payload) {\n  case true:\n    var today = new Date();\n    var cas = today.getHours() * 60 *60 + today.getMinutes() * 60;\n    //nudzove_zalievanie_zaciatok_cas_sekundy - nastavenie casu zaciatku, na vypocet dlzky trvania\n    global.set(\"nudzove_zalievanie_zaciatok_stromy_cas_sekundy\", cas, \"nudzove_zalievanie_zaciatok_stromy_cas_sekundy\");\n    break;\n  case false:\n    //nudzove_zalievanie_zaciatok_cas_sekundy - ak je vypnute, cas je tak velky, ze nikdy nenastane\n    global.set(\"nudzove_zalievanie_zaciatok_stromy_cas_sekundy\", 1000000, \"nudzove_zalievanie_zaciatok_stromy_cas_sekundy\");\n}\n\n//uloz switch status\nglobal.set(\"stromy_zapnut_nudzove_zalievanie\", msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 510,
+        "y": 860,
+        "wires": [
+            [
+                "4c2cc9cf.99d6e8",
+                "9b262fb3.39a178"
+            ]
+        ]
+    },
+    {
+        "id": "cf4dab5b.c282f8",
+        "type": "function",
+        "z": "ac020c08.012da",
+        "name": "zalievanie kvety",
+        "func": "var akt_cas = msg.payload;\nvar akt_den = global.get(\"aktualny_den_cislo\");\n\n//nastavenie pociatocnych stavov vystupnych dat payload a topic\n//payload=0 ventil zatvoreny, pauload=1 ventil otvoreny\nmsg.payload = 0;\nmsg.topic=\"ventil_kvety\";\nvar manualswitch;\n\n\n//nastavenie premennych\n//nastavenie globalnych parametrov\nvar tepl_predlz_casov = Number(global.get(\"teplota_predlzenia_casov\"));\nvar predlz_casov = Number(global.get(\"predlzenie_casov\"));\nvar min_tepl_zal = Number(global.get(\"min_teplota_zalievania\"));\nvar vlhk_vzd_stop_zal = Number(global.get(\"vlhkost_vzduchu_stop_zalievania\"));\nvar zap_povol_tepl_zal2 = Boolean(global.get(\"povolit_teplotu_spustenia_zalievania_2\"));\nvar povol_tepl_zal2 = Number(global.get(\"teplota_spustenia_zalievania_2\"));\n\n//snimace\nvar priem_tepl = Number(global.get(\"priemerna_teplota\"));\nvar priem_vlhk = Number(global.get(\"priemerna_vlhkost\"));\n\n//dni\nvar pon = Boolean(global.get(\"kvety_pondelok\"));\nvar uto = Boolean(global.get(\"kvety_utorok\"));\nvar str = Boolean(global.get(\"kvety_streda\"));\nvar stv = Boolean(global.get(\"kvety_stvrtok\"));\nvar pia = Boolean(global.get(\"kvety_piatok\"));\nvar sob = Boolean(global.get(\"kvety_sobota\"));\nvar ned = Boolean(global.get(\"kvety_nedela\"));\n\n//zalievanie 1.\nvar zap_zal1 = Boolean(global.get(\"kvety_zapnut_zalievanie_1\"));\nvar cas_zah_zal1_sek = Number(global.get(\"cas_kvety_zalievanie_1_sekundy\"));\nvar dlzka_zal1_sek = Number(global.get(\"kvety_dlzka_zalievania_1_sekundy\"));\n//zalievanie 2.\nvar zap_zal2 = Boolean(global.get(\"kvety_zapnut_zalievanie_2\"));\nvar cas_zah_zal2_sek = Number(global.get(\"cas_kvety_zalievanie_2_sekundy\"));\nvar dlzka_zal2_sek = Number(global.get(\"kvety_dlzka_zalievania_2_sekundy\"));\n//nudzove zalievanie\nvar zap_nudz_zal = Boolean(global.get(\"kvety_zapnut_nudzove_zalievanie\"));\nvar dlzka_nudz_zal_sek = Number(global.get(\"kvety_dlzka_nudzove_zalievanie_sekundy\"));\nvar nudz_zal_zac_cas_sekundy = Number(global.get(\"nudzove_zalievanie_zaciatok_kvety_cas_sekundy\", \"nudzove_zalievanie_zaciatok_kvety_cas_sekundy\"));\n\n//msg.payload = nudz_zal_zac_cas_sekundy\n\n//urcenie zhody dnesneho dna a planu dni na zalievanie, ak su zhodne cislo aktualneho dna s cislom naplanovaneho dna a zaroven naplanovany den je povoleny, nastav den na true\nvar den = false;\nif (pon === true) {if (akt_den === 1) {den = true}}\nif (uto === true) {if (akt_den === 2) {den = true}}\nif (str === true) {if (akt_den === 3) {den = true}}\nif (stv === true) {if (akt_den === 4) {den = true}}\nif (pia === true) {if (akt_den === 5) {den = true}}\nif (sob === true) {if (akt_den === 6) {den = true}}\nif (ned === true) {if (akt_den === 0) {den = true}}\nif (zap_nudz_zal===true) {den = true}\n\n//msg.payload = priem_tepl;\n\n//main\n//ak je dnes naplanovany den na zalievanie\nif (den === true) {\n\n    //ak je vonkajsia teplota vyssia, ako minimalna teplota na zalievanie\n    if (priem_tepl >= min_tepl_zal) {\n            \n        //aj je vonkajsia vlhkost vzduchu nizsia ako max vlhkost vzduchu na zalievanie\n        if (vlhk_vzd_stop_zal > priem_vlhk) {\n            \n            //pociatocna hodnota koeficientu predlzenie casu zalievania ak je vonkajsia teplota vyssia ako teplota predlzenia casov\n            var teplkoef = 1;\n            \n            //ak je zakazane 2. zalievanie na zaklade teploty, predlzuj cas zalievania podla teploty\n            if (zap_povol_tepl_zal2 === false){\n                if (priem_tepl >= tepl_predlz_casov) {teplkoef = 1 + (predlz_casov/100)}\n            }\n            \n            //ak je povolene 2. zalievanie na zaklade teploty, ignoruj nastavenie UI a povol 2.zalievanie\n            if (zap_povol_tepl_zal2 === true){\n                if(priem_tepl >= povol_tepl_zal2) {zap_zal2 = true}\n            }\n            \n            //ak je zapnute 1. zalievanie\n            if (zap_zal1 === true) {\n                \n                //ak je prave teraz zhodny cas s nastavenym casom na 1. zalievanie\n                if (akt_cas >= cas_zah_zal1_sek) {\n                    \n                    //vypocet casu, dokedy sa ma zalievat\n                    cas_zah_zal1_sek = cas_zah_zal1_sek + ( dlzka_zal1_sek * teplkoef );\n                    \n                    //ak sa ma este zalievat payload = 1?\n                    if (akt_cas <= cas_zah_zal1_sek) {\n                        \n                        //otvorit ventil\n                        msg.payload = 1;\n                    }\n                }\n            }\n            \n            //ak je zapnute 2. zalievanie\n            if (zap_zal2 === true) {\n               \n                //ak je prave teraz zhodny cas s nastavenym casom na 2. zalievanie\n                if (akt_cas >= cas_zah_zal2_sek) {\n                    \n                    //vypocet casu, dokedy sa ma zalievat\n                    cas_zah_zal2_sek = cas_zah_zal2_sek + ( dlzka_zal2_sek * teplkoef );\n                    \n                    //ak sa ma este zalievat payload = 1?\n                    if (akt_cas <= cas_zah_zal2_sek) {\n                        \n                        //otvorit ventil\n                        msg.payload = 1;\n                    }\n                }\n            }    \n\n            //ak je zapnute nudzove zalievanie\n            if (zap_nudz_zal === true) {\n                \n                //dokedy sa ma zalievat\n                nudz_zal_zac_cas_sekundy = nudz_zal_zac_cas_sekundy + (dlzka_nudz_zal_sek * teplkoef);\n\n                //ak sa ma este zalievat payload = 1?\n                if (akt_cas <= nudz_zal_zac_cas_sekundy) {\n                \n                    //otvorit ventil\n                    msg.payload = 1;\n                    manualswitch = {payload: \"on\"}\n                }\n                //ak sa uz nema zalievat, pretoze nastaveny cas dlzky zalievania uplynul\n                if (akt_cas > nudz_zal_zac_cas_sekundy) {\n                \n                    //zatvorit ventil\n                    msg.payload = 0;\n                    manualswitch = {payload: \"off\"}\n                }\n                \n            }                \n        }\n    }\n}\nreturn [msg, manualswitch];",
+        "outputs": 2,
+        "noerr": 0,
+        "x": 1440,
+        "y": 340,
+        "wires": [
+            [
+                "b05763f8.2e6ca8",
+                "7c93067b.ad12c8",
+                "7e3f70e9.9acd08"
+            ],
+            [
+                "8eaacd34.86167"
+            ]
+        ],
+        "outputLabels": [
+            "to sonoff valve",
+            "switch manualneho zalievania"
+        ]
+    },
+    {
+        "id": "b05763f8.2e6ca8",
+        "type": "change",
+        "z": "ac020c08.012da",
+        "name": "ventil_kvety horna zahrada zmen topic na r1",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "switch1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1830,
+        "y": 320,
+        "wires": [
+            [
+                "db990fe5.df5978"
+            ]
+        ]
+    },
+    {
+        "id": "8eaacd34.86167",
+        "type": "api-call-service",
+        "z": "ac020c08.012da",
+        "name": "off kvety_nudzove_zalievanie",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "homeassistant",
+        "service": "turn_{{payload}}",
+        "entityId": "input_boolean.kvety_nudzove_zalievanie",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1780,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bead2c22.aa8d3",
+        "type": "comment",
+        "z": "ac020c08.012da",
+        "name": "automatika zalievania kvety",
+        "info": "",
+        "x": 1480,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "a8c97a14.e6f0b8",
+        "type": "comment",
+        "z": "ac020c08.012da",
+        "name": "nastavenie cisla rele",
+        "info": "",
+        "x": 1760,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "460e140f.c64044",
+        "type": "comment",
+        "z": "ac020c08.012da",
+        "name": "vypnutie spinaca v Hass UI",
+        "info": "",
+        "x": 1780,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "7c93067b.ad12c8",
+        "type": "change",
+        "z": "ac020c08.012da",
+        "name": "ventil_kvety predna zahrada zmen topic na r3",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "switch3",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1840,
+        "y": 360,
+        "wires": [
+            [
+                "167e45f6.c99062"
+            ]
+        ]
+    },
+    {
+        "id": "8eaa622a.cf1e28",
+        "type": "comment",
+        "z": "ac020c08.012da",
+        "name": "sonoff spinac",
+        "info": "",
+        "x": 2250,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "7e3f70e9.9acd08",
+        "type": "change",
+        "z": "ac020c08.012da",
+        "name": "ventil_kvety okolo domu zmen topic na r4",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "switch4",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1820,
+        "y": 400,
+        "wires": [
+            [
+                "167e45f6.c99062"
+            ]
+        ]
+    },
+    {
+        "id": "dc521fa1.60227",
+        "type": "function",
+        "z": "ac020c08.012da",
+        "name": "zalievanie stromy",
+        "func": "var akt_cas = msg.payload;\nvar akt_den = global.get(\"aktualny_den_cislo\");\n\n//nastavenie pociatocnych stavov vystupnych dat payload a topic\n//payload=0 ventil zatvoreny, pauload=1 ventil otvoreny\nmsg.payload = 0;\nmsg.topic=\"ventil_stromy\";\nvar manualswitch;\n\n\n//nastavenie premennych\n//nastavenie globalnych parametrov\nvar tepl_predlz_casov = Number(global.get(\"teplota_predlzenia_casov\"));\nvar predlz_casov = Number(global.get(\"predlzenie_casov\"));\nvar min_tepl_zal = Number(global.get(\"min_teplota_zalievania\"));\nvar vlhk_vzd_stop_zal = Number(global.get(\"vlhkost_vzduchu_stop_zalievania\"));\nvar zap_povol_tepl_zal2 = Boolean(global.get(\"povolit_teplotu_spustenia_zalievania_2\"));\nvar povol_tepl_zal2 = Number(global.get(\"teplota_spustenia_zalievania_2\"));\n\n//snimace\nvar priem_tepl = Number(global.get(\"priemerna_teplota\"));\nvar priem_vlhk = Number(global.get(\"priemerna_vlhkost\"));\n\n//dni\nvar pon = Boolean(global.get(\"stromy_pondelok\"));\nvar uto = Boolean(global.get(\"stromy_utorok\"));\nvar str = Boolean(global.get(\"stromy_streda\"));\nvar stv = Boolean(global.get(\"stromy_stvrtok\"));\nvar pia = Boolean(global.get(\"stromy_piatok\"));\nvar sob = Boolean(global.get(\"stromy_sobota\"));\nvar ned = Boolean(global.get(\"stromy_nedela\"));\n\n//zalievanie 1.\nvar zap_zal1 = Boolean(global.get(\"stromy_zapnut_zalievanie_1\"));\nvar cas_zah_zal1_sek = Number(global.get(\"cas_stromy_zalievanie_1_sekundy\"));\nvar dlzka_zal1_sek = Number(global.get(\"stromy_dlzka_zalievania_1_sekundy\"));\n//zalievanie 2.\nvar zap_zal2 = Boolean(global.get(\"stromy_zapnut_zalievanie_2\"));\nvar cas_zah_zal2_sek = Number(global.get(\"cas_stromy_zalievanie_2_sekundy\"));\nvar dlzka_zal2_sek = Number(global.get(\"stromy_dlzka_zalievania_2_sekundy\"));\n//nudzove zalievanie\nvar zap_nudz_zal = Boolean(global.get(\"stromy_zapnut_nudzove_zalievanie\"));\nvar dlzka_nudz_zal_sek = Number(global.get(\"stromy_dlzka_nudzove_zalievanie_sekundy\"));\nvar nudz_zal_zac_cas_sekundy = Number(global.get(\"nudzove_zalievanie_zaciatok_stromy_cas_sekundy\", \"nudzove_zalievanie_zaciatok_stromy_cas_sekundy\"));\n\n//msg.payload = nudz_zal_zac_cas_sekundy\n\n//urcenie zhody dnesneho dna a planu dni na zalievanie, ak su zhodne cislo aktualneho dna s cislom naplanovaneho dna a zaroven naplanovany den je povoleny, nastav den na true\nvar den = false;\nif (pon === true) {if (akt_den === 1) {den = true}}\nif (uto === true) {if (akt_den === 2) {den = true}}\nif (str === true) {if (akt_den === 3) {den = true}}\nif (stv === true) {if (akt_den === 4) {den = true}}\nif (pia === true) {if (akt_den === 5) {den = true}}\nif (sob === true) {if (akt_den === 6) {den = true}}\nif (ned === true) {if (akt_den === 0) {den = true}}\nif (zap_nudz_zal===true) {den = true}\n\n//msg.payload = priem_tepl;\n\n//main\n//ak je dnes naplanovany den na zalievanie\nif (den === true) {\n\n    //ak je vonkajsia teplota vyssia, ako minimalna teplota na zalievanie\n    if (priem_tepl >= min_tepl_zal) {\n            \n        //aj je vonkajsia vlhkost vzduchu nizsia ako max vlhkost vzduchu na zalievanie\n        if (vlhk_vzd_stop_zal > priem_vlhk) {\n            \n            //pociatocna hodnota koeficientu predlzenie casu zalievania ak je vonkajsia teplota vyssia ako teplota predlzenia casov\n            var teplkoef = 1;\n            \n            //ak je zakazane 2. zalievanie na zaklade teploty, predlzuj cas zalievania podla teploty\n            if (zap_povol_tepl_zal2 === false){\n                if (priem_tepl >= tepl_predlz_casov) {teplkoef = 1 + (predlz_casov/100)}\n            }\n            \n            //ak je povolene 2. zalievanie na zaklade teploty, ignoruj nastavenie UI a povol 2.zalievanie\n            if (zap_povol_tepl_zal2 === true){\n                if(priem_tepl >= povol_tepl_zal2) {zap_zal2 = true}\n            }\n            \n            //ak je zapnute 1. zalievanie\n            if (zap_zal1 === true) {\n                \n                //ak je prave teraz zhodny cas s nastavenym casom na 1. zalievanie\n                if (akt_cas >= cas_zah_zal1_sek) {\n                    \n                    //vypocet casu, dokedy sa ma zalievat\n                    cas_zah_zal1_sek = cas_zah_zal1_sek + ( dlzka_zal1_sek * teplkoef );\n                    \n                    //ak sa ma este zalievat payload = 1?\n                    if (akt_cas <= cas_zah_zal1_sek) {\n                        \n                        //otvorit ventil\n                        msg.payload = 1;\n                    }\n                }\n            }\n            \n            //ak je zapnute 2. zalievanie\n            if (zap_zal2 === true) {\n               \n                //ak je prave teraz zhodny cas s nastavenym casom na 2. zalievanie\n                if (akt_cas >= cas_zah_zal2_sek) {\n                    \n                    //vypocet casu, dokedy sa ma zalievat\n                    cas_zah_zal2_sek = cas_zah_zal2_sek + ( dlzka_zal2_sek * teplkoef );\n                    \n                    //ak sa ma este zalievat payload = 1?\n                    if (akt_cas <= cas_zah_zal2_sek) {\n                        \n                        //otvorit ventil\n                        msg.payload = 1;\n                    }\n                }\n            }    \n\n            //ak je zapnute nudzove zalievanie\n            if (zap_nudz_zal === true) {\n                \n                //dokedy sa ma zalievat\n                nudz_zal_zac_cas_sekundy = nudz_zal_zac_cas_sekundy + (dlzka_nudz_zal_sek * teplkoef);\n\n                //ak sa ma este zalievat payload = 1?\n                if (akt_cas <= nudz_zal_zac_cas_sekundy) {\n                \n                    //otvorit ventil\n                    msg.payload = 1;\n                    manualswitch = {payload: \"on\"}\n                }\n                //ak sa uz nema zalievat, pretoze nastaveny cas dlzky zalievania uplynul\n                if (akt_cas > nudz_zal_zac_cas_sekundy) {\n                \n                    //zatvorit ventil\n                    msg.payload = 0;\n                    manualswitch = {payload: \"off\"}\n                }\n                \n            }                \n        }\n    }\n}\nreturn [msg, manualswitch];",
+        "outputs": 2,
+        "noerr": 0,
+        "x": 1450,
+        "y": 640,
+        "wires": [
+            [
+                "6665bb76.2bce14",
+                "8fe45827.6bbc98"
+            ],
+            [
+                "394a0636.7abf92"
+            ]
+        ],
+        "outputLabels": [
+            "to sonoff valve",
+            "switch manualneho zalievania"
+        ]
+    },
+    {
+        "id": "6665bb76.2bce14",
+        "type": "change",
+        "z": "ac020c08.012da",
+        "name": "ventil_stromy tuje zmen topic na r2",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "switch2",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1800,
+        "y": 620,
+        "wires": [
+            [
+                "db990fe5.df5978"
+            ]
+        ]
+    },
+    {
+        "id": "394a0636.7abf92",
+        "type": "api-call-service",
+        "z": "ac020c08.012da",
+        "name": "off stromy_nudzove_zalievanie",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "homeassistant",
+        "service": "turn_{{payload}}",
+        "entityId": "input_boolean.stromy_nudzove_zalievanie",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1790,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "817655f3.dd0bc8",
+        "type": "comment",
+        "z": "ac020c08.012da",
+        "name": "automatika zalievania stromy",
+        "info": "",
+        "x": 1480,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "6fd3d39f.946cf4",
+        "type": "comment",
+        "z": "ac020c08.012da",
+        "name": "nastavenie cisla rele",
+        "info": "",
+        "x": 1760,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "ef93d86f.16bbd8",
+        "type": "comment",
+        "z": "ac020c08.012da",
+        "name": "vypnutie spinaca v Hass UI",
+        "info": "",
+        "x": 1780,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "8fe45827.6bbc98",
+        "type": "change",
+        "z": "ac020c08.012da",
+        "name": "ventil_stromy ovocne stromy zmen topic na r2",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "switch2",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1840,
+        "y": 660,
+        "wires": [
+            [
+                "167e45f6.c99062"
+            ]
+        ]
+    },
+    {
+        "id": "7d6ca3a2.6e4dcc",
+        "type": "link in",
+        "z": "ac020c08.012da",
+        "name": "spustenie main",
+        "links": [
+            "e1f24c05.166278",
+            "d96385a5.86a8e",
+            "9a2b1f02.c8978",
+            "4c2cc9cf.99d6e8",
+            "d9594ee.afbceb",
+            "1c28f2f.461638d"
+        ],
+        "x": 115,
+        "y": 380,
+        "wires": [
+            [
+                "c663b6f4.fb9538"
+            ]
+        ]
+    },
+    {
+        "id": "9d8c3e72.c4d818",
+        "type": "comment",
+        "z": "ac020c08.012da",
+        "name": "spustenie pri zmene parametra v UI",
+        "info": "",
+        "x": 240,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "d96385a5.86a8e",
+        "type": "link out",
+        "z": "cbaf4de.5bd83b",
+        "name": "spustenie main",
+        "links": [
+            "7d6ca3a2.6e4dcc"
+        ],
+        "x": 795,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "9a2b1f02.c8978",
+        "type": "link out",
+        "z": "4677721b.370c34",
+        "name": "spustenie main",
+        "links": [
+            "7d6ca3a2.6e4dcc"
+        ],
+        "x": 795,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "4c2cc9cf.99d6e8",
+        "type": "link out",
+        "z": "2574cf31.c48ca",
+        "name": "spustenie main",
+        "links": [
+            "7d6ca3a2.6e4dcc"
+        ],
+        "x": 795,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "d9594ee.afbceb",
+        "type": "link out",
+        "z": "f520b491.13c86",
+        "name": "spustenie main",
+        "links": [
+            "7d6ca3a2.6e4dcc"
+        ],
+        "x": 795,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "9b262fb3.39a178",
+        "type": "debug",
+        "z": "2574cf31.c48ca",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 800,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "c663b6f4.fb9538",
+        "type": "function",
+        "z": "ac020c08.012da",
+        "name": "nudzove vypnutie payload",
+        "func": "msg.payload = Boolean(global.get(\"vypnut_zalievanie\"));\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 500,
+        "y": 240,
+        "wires": [
+            [
+                "b0be70a4.8a202"
+            ]
+        ]
+    },
+    {
+        "id": "b0be70a4.8a202",
+        "type": "switch",
+        "z": "ac020c08.012da",
+        "name": "nudzove vypnutie?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "false"
+            },
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 750,
+        "y": 240,
+        "wires": [
+            [
+                "6a1ac0b3.96c2c"
+            ],
+            [
+                "ca17d2df.abc8f",
+                "8a789da0.fb8868"
+            ]
+        ]
+    },
+    {
+        "id": "8c325feb.5a7838",
+        "type": "comment",
+        "z": "ac020c08.012da",
+        "name": "ak je nudzove vypnutie vypni zalievanie",
+        "info": "",
+        "x": 530,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "1c28f2f.461638d",
+        "type": "link out",
+        "z": "1789ec23.e7f784",
+        "name": "spustenie main",
+        "links": [
+            "7d6ca3a2.6e4dcc"
+        ],
+        "x": 755,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "ca17d2df.abc8f",
+        "type": "change",
+        "z": "ac020c08.012da",
+        "name": "nudzove vypnutie off",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "off",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1020,
+        "y": 400,
+        "wires": [
+            [
+                "1180a92c.25caaf",
+                "8eaacd34.86167",
+                "394a0636.7abf92",
+                "60873ad.2789044"
+            ]
+        ]
+    },
+    {
+        "id": "eb62b8b4.f0cc8",
+        "type": "comment",
+        "z": "ac020c08.012da",
+        "name": "vypne spinace nudzoveho zalievania v UI",
+        "info": "",
+        "x": 1080,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "8a789da0.fb8868",
+        "type": "change",
+        "z": "ac020c08.012da",
+        "name": "nudzove vypnutie 0",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1010,
+        "y": 440,
+        "wires": [
+            [
+                "2c33140e.2f5c5c",
+                "b05763f8.2e6ca8",
+                "7c93067b.ad12c8",
+                "7e3f70e9.9acd08",
+                "6665bb76.2bce14",
+                "8fe45827.6bbc98",
+                "ec553bf0.03c968"
+            ]
+        ]
+    },
+    {
+        "id": "65fb2c7e.d2ea8c",
+        "type": "server-state-changed",
+        "z": "1789ec23.e7f784",
+        "name": "povolit teplotu spustenia 2. zalievania",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.povolit_teplotu_spustenia_zalievania_2",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 170,
+        "y": 380,
+        "wires": [
+            [
+                "70cf722e.871de4"
+            ]
+        ]
+    },
+    {
+        "id": "79e8c8e8.d52d28",
+        "type": "server-state-changed",
+        "z": "1789ec23.e7f784",
+        "name": "teplota spustenia 2. zalievania",
+        "server": "d48ee4c6.6493a8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_number.teplota_spustenia_zalievania_2",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "num",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 140,
+        "y": 440,
+        "wires": [
+            [
+                "4258798e.a51ad"
+            ]
+        ]
+    },
+    {
+        "id": "ffeefb39.2b219",
+        "type": "debug",
+        "z": "f492a4f4.cacf7",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 1120,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "70cf722e.871de4",
+        "type": "function",
+        "z": "1789ec23.e7f784",
+        "name": "povolit teplotu spustenia 2. zalievania",
+        "func": "global.set(\"povolit_teplotu_spustenia_zalievania_2\", msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 530,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4258798e.a51ad",
+        "type": "function",
+        "z": "1789ec23.e7f784",
+        "name": "teplota spustenia 2. zalievania",
+        "func": "global.set(\"teplota_spustenia_zalievania_2\", msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 510,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dd37ee8.044a79",
+        "type": "debug",
+        "z": "ac020c08.012da",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 570,
+        "y": 420,
+        "wires": []
+    }
+]

@@ -1,0 +1,11 @@
+﻿- id: '1586718801234'
+  alias: zavlaha nudzove vypnutie
+  description: ''
+  trigger:
+  - entity_id: input_boolean.vypnut_zalievanie
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - scene: scene.zavlaha_ventily

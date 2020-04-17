@@ -1,0 +1,21 @@
+﻿cards:
+  - entities:
+      - entity: switch.zahrada_4chpro2_u1_r1
+        name: zahony
+      - entity: switch.4chpro2_u1_r2
+        name: stromy
+      - entity: switch.4chpro2_u1_r3
+        name: predna zahrada
+      - entity: switch.4chpro2_u1_r4
+        name: okolo domu
+      - entity: switch.4chpro2_u2_r1
+        name: horna zahrada
+      - entity: switch.4chpro2_u2_r2
+        name: tuje
+      - entity: switch.4chpro2_u3_r1
+        name: travnik
+    hours_to_show: 240
+    refresh_interval: 0
+    title: Ventily
+    type: history-graph
+type: vertical-stack

@@ -1,0 +1,14 @@
+﻿entities:
+  - entity: input_number.teplota_predlzenia_casov
+  - entity: input_number.predlzenie_casov
+  - type: divider
+  - entity: input_number.teplota_stop_zalievania
+  - entity: input_number.vlhkost_vzduchu_stop_zalievania
+  - type: divider
+  - entity: input_boolean.povolit_teplotu_spustenia_zalievania_2
+    name: 2. zalievanie na zaklade teploty
+  - entity: input_number.teplota_spustenia_zalievania_2
+    name: teplota
+show_header_toggle: false
+title: Globalne nastavenie
+type: entities

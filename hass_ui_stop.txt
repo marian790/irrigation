@@ -1,0 +1,8 @@
+﻿entity: input_boolean.vypnut_zalievanie
+hold_action:
+  action: none
+show_icon: true
+show_name: true
+tap_action:
+  action: toggle
+type: button

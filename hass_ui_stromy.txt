@@ -1,0 +1,31 @@
+﻿entities:
+  - entity: switch.4chpro2_u2_r2
+    icon: 'mdi:water-pump'
+    name: tuje
+  - entity: switch.4chpro2_u1_r2
+    icon: 'mdi:water-pump'
+    name: ovocne stromy
+  - type: divider
+  - input_boolean.stromy_pondelok
+  - input_boolean.stromy_utorok
+  - input_boolean.stromy_streda
+  - input_boolean.stromy_stvrtok
+  - input_boolean.stromy_piatok
+  - input_boolean.stromy_sobota
+  - input_boolean.stromy_nedela
+  - type: divider
+  - input_boolean.stromy_zapnut_zalievanie_1
+  - input_datetime.stromy_zalievanie_1
+  - input_number.stromy_dlzka_zalievania_1
+  - type: divider
+  - input_boolean.stromy_zapnut_zalievanie_2
+  - entity: input_boolean.povolit_teplotu_spustenia_zalievania_2
+    name: 2. zalievanie na zaklade teploty
+  - input_datetime.stromy_zalievanie_2
+  - input_number.stromy_dlzka_zalievania_2
+  - type: divider
+  - input_boolean.stromy_nudzove_zalievanie
+  - input_number.stromy_nudzove_zalievanie
+show_header_toggle: false
+title: stromy
+type: entities

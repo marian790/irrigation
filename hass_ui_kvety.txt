@@ -1,0 +1,34 @@
+﻿entities:
+  - entity: switch.4chpro2_u2_r1
+    icon: 'mdi:water-pump'
+    name: horna zahrada
+  - entity: switch.4chpro2_u1_r3
+    icon: 'mdi:water-pump'
+    name: predna zahrada
+  - entity: switch.4chpro2_u1_r4
+    icon: 'mdi:water-pump'
+    name: okolo domu
+  - type: divider
+  - input_boolean.kvety_pondelok
+  - input_boolean.kvety_utorok
+  - input_boolean.kvety_streda
+  - input_boolean.kvety_stvrtok
+  - input_boolean.kvety_piatok
+  - input_boolean.kvety_sobota
+  - input_boolean.kvety_nedela
+  - type: divider
+  - input_boolean.kvety_zapnut_zalievanie_1
+  - input_datetime.kvety_zalievanie_1
+  - input_number.kvety_dlzka_zalievania_1
+  - type: divider
+  - input_boolean.kvety_zapnut_zalievanie_2
+  - entity: input_boolean.povolit_teplotu_spustenia_zalievania_2
+    name: 2. zalievanie na zaklade teploty
+  - input_datetime.kvety_zalievanie_2
+  - input_number.kvety_dlzka_zalievania_2
+  - type: divider
+  - input_boolean.kvety_nudzove_zalievanie
+  - input_number.kvety_nudzove_zalievanie
+show_header_toggle: false
+title: kvety
+type: entities
